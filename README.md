@@ -18,7 +18,8 @@
         - Poppins
 
         obs: Por padrão caso não encontrada essas fonts, será utilizada sans-serif
-
+## Bibliotécas utilizadas:
+        - axios
 ## Organização dos Repositórios
 
         - src -> diretório principal, contém todo o projeto
