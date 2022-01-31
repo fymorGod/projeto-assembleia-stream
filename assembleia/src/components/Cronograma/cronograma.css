@@ -1,0 +1,23 @@
+.cronograma-content{
+    width: 20%;
+    background-color: #d8d8d8;
+}
+.title-cronograma{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-cronograma p{
+    margin-right: 5px;
+    font-size: .8em;
+    font-weight: 500;
+}
+
+.content-programacao{
+    background: #c4c4c4;
+}
+.content-programacao p{
+    font-size: .8rem;
+    text-align: center;
+}
