@@ -15,8 +15,25 @@ export function Home() {
             <div className="box-destaque">
                 <div className="container-destaque">
                     <h2>Destaques</h2>
-                    <div className="cards-videos">
-                    <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E"/>
+                    <div className="content-sessoes">
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -24,8 +41,25 @@ export function Home() {
             <div className="box-sessoes">
                 <div className="container-sessoes">
                     <h2>Sessões</h2>
-                    <div className="cards-videos">
-                    <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E"/>
+                    <div className="content-sessoes">
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
+                        <div className="cards-videos">
+                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                        </div>
                     </div>
                 </div>
             </div>
