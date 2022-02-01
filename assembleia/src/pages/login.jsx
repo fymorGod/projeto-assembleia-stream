@@ -22,7 +22,7 @@ export function Login() {
     }
 
     return (
-        <div className='container'>
+        <div className='container-login'>
             <div className="card-box">
                 <h2>Login</h2>
                 <p>Assembleia Legislativa</p>
