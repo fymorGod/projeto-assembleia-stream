@@ -22,6 +22,7 @@
     font-size: 1em;
     color:#333;
     font-weight: 500;
+    margin-left: 20px;
 }
 .container-destaque h2::after{
     content: '';
@@ -56,6 +57,7 @@
     font-size: 1em;
     color:#333;
     font-weight: 500;
+    margin-left: 20px;
 }
 .container-sessoes h2::after{
     content: '';
@@ -69,4 +71,5 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+    margin-top: -20px;
 }
