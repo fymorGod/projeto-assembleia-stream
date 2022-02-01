@@ -12,7 +12,7 @@
 ## Tecnologias utilizadas:
         - ReactJS - (Framework de desenvolvimento de aplicações web)
         - UX/CSS - (Folhas de estilo - perfomance visual do projeto)
-
+        - Django - ( Framework de desenvolvimento de API's │ Regra de Negócio )
 ## Fontes usadas:
         - Roboto
         - Poppins
@@ -20,6 +20,8 @@
         obs: Por padrão caso não encontrada essas fonts, será utilizada sans-serif
 ## Bibliotécas utilizadas:
         - axios
+        - django-rest-framework
+        - cors
 ## Organização dos Repositórios
 
         - src -> diretório principal, contém todo o projeto
