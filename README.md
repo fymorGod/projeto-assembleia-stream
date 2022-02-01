@@ -16,6 +16,7 @@
         - ReactJS - (Framework de desenvolvimento de aplicações web)
         - UX/CSS - (Folhas de estilo - perfomance visual do projeto)
         - Django - ( Framework de desenvolvimento de API's │ Regra de Negócio )
+        - Typescript - Um super set do javascript -> fortemente tipado
 ## Fluxogramas do projeto:
 * Fluxo Front End - Admin
 <div align="center">
@@ -36,6 +37,7 @@
         - axios
         - django-rest-framework
         - cors
+        - react-player
 ## Organização dos Repositórios
 
         - src -> diretório principal, contém todo o projeto
