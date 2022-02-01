@@ -1,15 +1,15 @@
-import api from '../api/app';
+//import api from '../api/app';
 import '../styles/login.css';
 import { useEffect } from 'react';
 //import { useState } from 'react';
 
 export function Login() {
     //const [] = useState()
-    useEffect(() => {
-        api.get('/admin/login').then((response) => {
-            console.log(response.data);
-        })
-    }, [])
+    // useEffect(() => {
+    //     api.get('/admin/login').then((response) => {
+    //         console.log(response.data);
+    //     })
+    // }, [])
 
     function handleLogin() {
         /**

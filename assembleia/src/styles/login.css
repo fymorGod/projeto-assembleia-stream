@@ -62,7 +62,7 @@
 
     box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, .3);
     cursor: pointer;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out .2s;
 }
 .card-box .form-login button:hover{
     transform: translateY(-5px);
