@@ -65,7 +65,7 @@ def index(request):
             'id': result['id'],
             'thumbnail': result['snippet']['thumbnails']['high']['url'],
             'duration': parse_duration(result['contentDetails']['duration']).total_seconds(),
-            'link': 'https://www.youtube.com/watch?v=' + result['id']
+            'link': f'https://www.youtube.com/watch?v={ result["id"] }'
         }
 
         videos.append(video_data)
