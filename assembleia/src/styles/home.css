@@ -6,7 +6,9 @@
     flex-direction: row;
 }
 .box-destaque{
-    padding: 20px 84px;
+    margin: 0% auto;
+    width: 90%;
+    padding: 20px;
 }
 .container-destaque{
     margin: 0 auto;
@@ -36,7 +38,9 @@
 }
 
 .box-sessoes{
-    padding: 20px 84px;
+    margin: 0% auto;
+    width: 90%;
+    padding: 20px;
 }
 .container-sessoes{
     margin-top: -20px;
