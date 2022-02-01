@@ -19,5 +19,5 @@ from django.urls import path, re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path('', views.index),
+    re_path(r'^api/search/$', views.index),
 ]
