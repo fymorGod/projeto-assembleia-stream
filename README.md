@@ -1,6 +1,6 @@
 # Projeto Assembleia - Desenvolvimento Front 
 <div align="center">
-<img src="C:\Users\luiz.costa\Desktop\projeto-assem\front\assembleia" />
+![layout-01](https://user-images.githubusercontent.com/54417643/152018754-954c80b8-ffc3-4f07-b6cc-a92e0e90f84e.png)
 </div>
 
 ## Passo a passo para rodar o projeto em seu ambiente
