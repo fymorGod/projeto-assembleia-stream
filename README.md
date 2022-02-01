@@ -17,9 +17,14 @@
         - UX/CSS - (Folhas de estilo - perfomance visual do projeto)
         - Django - ( Framework de desenvolvimento de API's │ Regra de Negócio )
 ## Fluxogramas do projeto:
-
+* Fluxo Front End - Admin
 <div align="center">
 <img src="https://user-images.githubusercontent.com/54417643/152019700-badd5bcb-ebd3-407d-8ed0-97a2d35bb47b.png" width="860px"/>
+</div>
+
+* Fluxo Back End - Sistema Completo
+<div align="center">
+<img src="https://user-images.githubusercontent.com/54417643/152020629-399c9272-9a1e-4e14-8a4b-4e92ed25e939.png" width="860px"/>
 </div>
 
 ## Fontes usadas:
