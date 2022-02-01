@@ -1,4 +1,7 @@
 # Projeto Assembleia - Desenvolvimento Front 
+<div align="center">
+<img src="C:\Users\luiz.costa\Desktop\projeto-assem\front\assembleia" />
+</div>
 
 ## Passo a passo para rodar o projeto em seu ambiente
         - passo 1: Ter instalado o Git e configurado o mesmo
