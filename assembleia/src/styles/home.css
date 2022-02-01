@@ -14,12 +14,12 @@
     margin: 0 auto;
     width: 100%;
     padding: 10px 20px;
-    background: #d8d8d8;
+    background: #f2f2f2;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
     border-radius: 3px;
 }
 .container-destaque h2{
-    font-size: .8em;
+    font-size: 1em;
     color:#333;
     font-weight: 500;
 }
@@ -32,9 +32,11 @@
     background: red;
 }
 .cards-videos{
+    display: flex;
+    align-items: center;
     margin-top: 20px;
-    width: 120px;
-    background: transparent;
+    width: 180px;
+    height: 180px;
 }
 
 .box-sessoes{
@@ -45,13 +47,13 @@
 .container-sessoes{
     margin-top: -20px;
     width: 100%;
-    padding: 10px;
-    background: #d8d8d8;
+    padding: 10px 20px;
+    background: #f2f2f2;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
     border-radius: 3px;
 }
 .container-sessoes h2{
-    font-size: .8em;
+    font-size: 1em;
     color:#333;
     font-weight: 500;
 }
