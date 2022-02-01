@@ -80,8 +80,6 @@ def index(request):
         'videos': videos   
     }                
 
-    print(context)
-
     # context_serialized = Serializer(context)
     # print('\n\n', context_serialized)
 
