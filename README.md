@@ -16,6 +16,12 @@
         - ReactJS - (Framework de desenvolvimento de aplicações web)
         - UX/CSS - (Folhas de estilo - perfomance visual do projeto)
         - Django - ( Framework de desenvolvimento de API's │ Regra de Negócio )
+## Fluxogramas do projeto:
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/54417643/152019700-badd5bcb-ebd3-407d-8ed0-97a2d35bb47b.png" width="860px"/>
+</div>
+
 ## Fontes usadas:
         - Roboto
         - Poppins
@@ -35,6 +41,5 @@
             obs:: título do arquivo faz referência ao seu componente ou sua page
 
 ## Estrutura dos commits para o projeto
-
 * Modelo: git commit -m [ nome_do_arquivo - resumo
     _da_atualização - v1.0.0 (versão onde está o projeto)]
