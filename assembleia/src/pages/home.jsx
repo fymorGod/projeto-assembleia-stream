@@ -17,22 +17,22 @@ export function Home() {
                     <h2>Destaques</h2>
                     <div className="content-sessoes">
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                     </div>
                 </div>
@@ -43,22 +43,22 @@ export function Home() {
                     <h2>Sessões</h2>
                     <div className="content-sessoes">
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                         <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
+                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
                         </div>
                     </div>
                 </div>

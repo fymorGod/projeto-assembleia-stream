@@ -1,4 +1,7 @@
 # Projeto Assembleia - Desenvolvimento Front 
+<div align="center">
+<img src="https://user-images.githubusercontent.com/54417643/152018754-954c80b8-ffc3-4f07-b6cc-a92e0e90f84e.png" width="860px"/>
+</div>
 
 ## Passo a passo para rodar o projeto em seu ambiente
         - passo 1: Ter instalado o Git e configurado o mesmo
@@ -13,6 +16,18 @@
         - ReactJS - (Framework de desenvolvimento de aplicações web)
         - UX/CSS - (Folhas de estilo - perfomance visual do projeto)
         - Django - ( Framework de desenvolvimento de API's │ Regra de Negócio )
+        - Typescript - Um super set do javascript -> fortemente tipado
+## Fluxogramas do projeto:
+* Fluxo Front End - Admin
+<div align="center">
+<img src="https://user-images.githubusercontent.com/54417643/152019700-badd5bcb-ebd3-407d-8ed0-97a2d35bb47b.png" width="860px"/>
+</div>
+
+* Fluxo Back End - Sistema Completo
+<div align="center">
+<img src="https://user-images.githubusercontent.com/54417643/152020629-399c9272-9a1e-4e14-8a4b-4e92ed25e939.png" width="860px"/>
+</div>
+
 ## Fontes usadas:
         - Roboto
         - Poppins
@@ -22,6 +37,7 @@
         - axios
         - django-rest-framework
         - cors
+        - react-player
 ## Organização dos Repositórios
 
         - src -> diretório principal, contém todo o projeto
@@ -32,6 +48,5 @@
             obs:: título do arquivo faz referência ao seu componente ou sua page
 
 ## Estrutura dos commits para o projeto
-
 * Modelo: git commit -m [ nome_do_arquivo - resumo
     _da_atualização - v1.0.0 (versão onde está o projeto)]
