@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import {api} from '../api/app';
+import { api } from '../api/app';
 import { Cronograma } from "../components/Cronograma/Cronograma";
 import { Navbar } from "../components/NavBar/Navbar";
 import { PlayerVideo } from "../components/PlayerVideo/PlayerVideo";
 import '../styles/home.css';
 
 export function Home() {
-    const [ videos, setVideo] = useState([])
+    const [videos, setVideo] = useState([])
 
     useEffect(() => {
         api.get('/search/').then(response => {
@@ -16,18 +16,19 @@ export function Home() {
     }, [])
 
     const createdCard = () => {
-        return (<div className="card">
-            <div className="thumbnail">
-                {
-                    videos.map(video => (
-                        <div key={video.id}>
-                            <p>{video.title[0]} </p>
+        return (<div>{
+                videos.map(video => (
+                    <div className="card">
+                        <div className="thumbnail">
+                            <div key={video.id}>
+                                <p>{video.title} </p>
+                            </div>
                         </div>
-                     ))
-                    // console.log(videos[0].title)
-                }
+                    </div>
+                ))
+            }
             </div>
-        </div>)
+        )
     }
 
     return (
