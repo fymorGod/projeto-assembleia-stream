@@ -74,14 +74,7 @@ def index(request):
                 'link': f'https://www.youtube.com/watch?v={ result["id"] }'
             }
 
-            videos.append(video_data)
-
-    context = {
-        'videos': videos   
-    }                
-
-    context_serialized = Serializer(context)
-    print('\n\n', context_serialized)
+            videos.append(video_data)    
 
     return Response(videos)
     # return render(request, 'search/index.html', context)
