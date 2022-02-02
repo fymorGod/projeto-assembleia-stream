@@ -37,6 +37,7 @@
     margin: 0% auto;
     width: 89%;
     padding: 20px;
+    display: flex;
 }
 .container-sessoes{
     margin-top: -20px;
