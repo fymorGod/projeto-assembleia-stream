@@ -9,18 +9,21 @@ export function Home() {
     const [videos, setVideo] = useState([])
 
     const createdCard = () => {
-        return (<div>{
-                videos.map(video => (
-                    <div className="card">
+        return (<div>
+            <div className="card">
+                {
+                    videos.map(video => (
+
                         <div className="thumbnail">
                             <div key={video.id}>
                                 <p>{video.title} </p>
                             </div>
                         </div>
-                    </div>
-                ))
-            }
+
+                    ))
+                }
             </div>
+        </div>
         )
     }
 
