@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'search',
+    'app_autentic',
     'user_videos'
 ]
 
