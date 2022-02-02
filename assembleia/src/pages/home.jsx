@@ -15,13 +15,6 @@ export function Home() {
         })
     }, [])
 
-    const createdCard = () => {
-        return (<div>
-
-        </div>
-        )
-    }
-
     return (
         <div>
             <Navbar />
