@@ -1,10 +1,18 @@
 import { Cronograma } from "../components/Cronograma/Cronograma";
 import { Navbar } from "../components/NavBar/Navbar";
 import { PlayerVideo } from "../components/PlayerVideo/PlayerVideo";
-import ReactPlayer from "react-player";
 import '../styles/home.css';
 
 export function Home() {
+    const createdCard = () => {
+        return (<div className="card">
+            <div className="thumbnail">
+                <h2>aqui vai a imagem</h2>
+            </div>
+        </div>)
+    }
+
+
     return (
         <div>
             <Navbar />
@@ -15,25 +23,10 @@ export function Home() {
             <div className="box-destaque">
                 <div className="container-destaque">
                     <h2>Destaques</h2>
-                    <div className="content-sessoes">
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
+                </div>
+                <div className="card">
+                    <div className="thumbnail">
+                        <h2>aqui vai a imagem</h2>
                     </div>
                 </div>
             </div>
@@ -41,27 +34,10 @@ export function Home() {
             <div className="box-sessoes">
                 <div className="container-sessoes">
                     <h2>Sessões</h2>
-                    <div className="content-sessoes">
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='200px' height="120px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                    </div>
                 </div>
+                {
+                    createdCard()
+                }
             </div>
         </div>
     )
