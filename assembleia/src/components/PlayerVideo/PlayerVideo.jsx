@@ -1,7 +1,14 @@
+import {api} from '../../api/app';
 import ReactPlayer from 'react-player';
 import './playerVideo.css';
+import { useEffect } from 'react';
 
 export function PlayerVideo(){
+    useEffect(() => {
+        api.get('/search/').then(response => {
+            console.log(response.data)
+        })
+    },[])
     return(
         <div className="content-video">
             <div className="title">

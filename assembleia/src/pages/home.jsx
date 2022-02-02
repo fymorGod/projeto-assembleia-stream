@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api } from "../api/app";
+import {api} from '../api/app';
 import { Cronograma } from "../components/Cronograma/Cronograma";
 import { Navbar } from "../components/NavBar/Navbar";
 import { PlayerVideo } from "../components/PlayerVideo/PlayerVideo";
