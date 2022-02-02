@@ -76,12 +76,12 @@ def index(request):
 
             videos.append(video_data)
 
-    context = {
-        'videos': videos   
-    }                
+    # context = {
+    #     'videos': videos   
+    # }                
 
     # context_serialized = Serializer(context)
     # print('\n\n', context_serialized)
 
-    return Response(context)
+    return Response(videos)
     # return render(request, 'search/index.html', context)
