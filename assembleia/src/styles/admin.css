@@ -1,0 +1,84 @@
+.container-admin-sistem{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+}
+.container-forms{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.box-login{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#admin-user{
+    text-align: start;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-right: 60px;
+}
+.box-login h2::after{
+    content: '';
+    width: 70px;
+    background: red;
+    height: 2px;
+    display: block;
+}
+.box-menu{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background: #f2f2f2;
+    padding: 30px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+}
+.box-buttons{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+.container-forms p{
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid red;
+}
+.box-menu button{
+    width: 260px;
+    height: 40px;
+    margin-top: 20px;
+    border: none;
+    background: rgb(65, 122, 228);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+    color: #f2f2f2;
+    font-size: .9rem;
+    font-weight: 500;
+}
+.box-forms{
+    width: 800px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    background: #f2f2f2;
+    margin-left: 20px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+}
+.box-content form{
+    width: 100%;
+    height: 100%;
+}
+.box-content form input{
+
+}
