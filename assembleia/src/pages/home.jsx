@@ -15,25 +15,6 @@ export function Home() {
         })
     }, [])
 
-    const createdCard = () => {
-        return (<div>
-            <div className="card">
-                {
-                    videos.map(video => (
-
-                        <div className="thumbnail">
-                            <div key={video.id}>
-                                <p>{video.title} </p>
-                            </div>
-                        </div>
-
-                    ))
-                }
-            </div>
-        </div>
-        )
-    }
-
     return (
         <div>
             <Navbar />
@@ -57,7 +38,13 @@ export function Home() {
                     <h2>Sessões</h2>
                 </div>
                 {
-                    createdCard()
+                    videos.map(video => (
+                        <div key={video.id} className="card">
+                            <div>
+                                <p>{video.title} </p>
+                            </div>
+                        </div>
+                    ))
                 }
             </div>
         </div>

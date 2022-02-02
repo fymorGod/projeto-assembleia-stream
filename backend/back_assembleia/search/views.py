@@ -26,7 +26,7 @@ def index(request):
         search_params = {
             'part':'snippet',
             # 'q':'learn python',
-            'maxResults': 20,
+            'maxResults': 6,
             'channelId':'UCQTEYscjlvwG_1j0a0Wky0w',
             'order':'date',
             'key': settings.YOUTUBE_DATA_API_KEY,
@@ -51,7 +51,7 @@ def index(request):
             'key': settings.YOUTUBE_DATA_API_KEY,
             'part':'snippet, contentDetails',
             'id':','.join(video_ids),
-            'maxResults': 9
+            'maxResults': 6
         }
 
         # Faz a request com base na url de busca e usa os parâmetros de busca
@@ -74,14 +74,7 @@ def index(request):
                 'link': f'https://www.youtube.com/watch?v={ result["id"] }'
             }
 
-            videos.append(video_data)
-
-    context = {
-        'videos': videos   
-    }                
-
-    context_serialized = Serializer(context)
-    print('\n\n', context_serialized)
+            videos.append(video_data)    
 
     return Response(videos)
     # return render(request, 'search/index.html', context)

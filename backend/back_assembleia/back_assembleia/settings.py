@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'search',
     'app_autentic',
+    'user_videos'
 ]
 
 MIDDLEWARE = [
