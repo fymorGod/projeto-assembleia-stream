@@ -1,30 +1,34 @@
+import { useEffect, useState } from "react";
 import {api} from '../api/app';
-import { useEffect } from 'react';
-import { useState } from "react";
 import { Cronograma } from "../components/Cronograma/Cronograma";
 import { Navbar } from "../components/NavBar/Navbar";
 import { PlayerVideo } from "../components/PlayerVideo/PlayerVideo";
 import '../styles/home.css';
 
 export function Home() {
-    const [video, setVideos] = useState([])
+    const [ videos, setVideo] = useState([])
+
+    useEffect(() => {
+        api.get('/search/').then(response => {
+            console.log(response.data[0].title);
+            setVideo(response.data);
+        })
+    }, [])
 
     const createdCard = () => {
         return (<div className="card">
             <div className="thumbnail">
-                <h2>{video.map(v => {
-                    <p>{v.id}</p>
-                })}</h2>
+                {
+                    videos.map(video => (
+                        <div key={video.id}>
+                            <p>{video.title[0]} </p>
+                        </div>
+                     ))
+                    // console.log(videos[0].title)
+                }
             </div>
         </div>)
     }
-
-    useEffect(() => {
-        api.get('/search/').then(response => {
-            // setVideos(response.data)
-            console.log(response.data)
-        })
-    },[])
 
     return (
         <div>
