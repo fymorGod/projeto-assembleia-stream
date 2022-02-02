@@ -8,19 +8,19 @@ import '../styles/home.css';
 export function Home() {
     const [videos, setVideo] = useState([])
 
+    useEffect(() => {
+        api.get('/search/').then(response => {
+            console.log(response.data[0].title);
+            setVideo(response.data);
+        })
+    }, [])
+
     const createdCard = () => {
         return (<div>
 
         </div>
         )
     }
-
-    useEffect(() => {
-        api.get('/search/').then(response => {
-            console.log(response.data);
-            setVideo(response.data);
-        })
-    }, [])
 
     return (
         <div>
