@@ -25,6 +25,8 @@ export function Admin() {
         }, headers).then(response => {
             console.log(response.data);
         })
+
+        console.log(file)
     }
     return (
         <>
@@ -47,7 +49,7 @@ export function Admin() {
                             <label htmlFor="title-video">Título do Vídeo</label>
                             <input type="text" name='title-video' id='title-video' onChange={e => setTitle(e.target.value)} />
                             <label htmlFor="video">Inserir o Vídeo</label>
-                            <input type="file" name='video' id='video' onChange={e => setFile(e.target.files['name'])} />
+                            <input type="file" name='video' id='video' onChange={e => setFile(e.target.files[0])} />
                             <textarea name="description" id="description" placeholder='Descrição do vídeo' onChange={e => setDescription(e.target.value)}></textarea>
                             <div className="title">
                                 <h2>Destaque</h2>
