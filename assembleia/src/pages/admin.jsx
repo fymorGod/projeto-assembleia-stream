@@ -19,7 +19,7 @@ export function Admin() {
         e.preventDefault();
         await api.post('/videos_post/',{
             title: title,
-            file: file.name,
+            file: file,
             description: description,
             destaque: destaque
         }, headers).then(response => {
@@ -49,7 +49,7 @@ export function Admin() {
                             <label htmlFor="title-video">Título do Vídeo</label>
                             <input type="text" name='title-video' id='title-video' onChange={e => setTitle(e.target.value)} />
                             <label htmlFor="video">Inserir o Vídeo</label>
-                            <input type="file" name='video' id='video' onChange={e => setFile(e.target.files[0])} />
+                            <input type="file" name='video' id='video' onChange={e => setFile(e.target.files[0].name)} />
                             <textarea name="description" id="description" placeholder='Descrição do vídeo' onChange={e => setDescription(e.target.value)}></textarea>
                             <div className="title">
                                 <h2>Destaque</h2>
