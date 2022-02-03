@@ -7,21 +7,22 @@
 }
 .box-destaque{
     margin: 0% auto;
-    width: 90%;
+    width: 89%;
     padding: 20px;
 }
 .container-destaque{
     margin: 0 auto;
     width: 100%;
     padding: 10px 20px;
-    background: #d8d8d8;
+    background: #f2f2f2;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
     border-radius: 3px;
 }
 .container-destaque h2{
-    font-size: .8em;
+    font-size: 1em;
     color:#333;
     font-weight: 500;
+    margin-left: 20px;
 }
 .container-destaque h2::after{
     content: '';
@@ -31,29 +32,25 @@
     height: 2px;
     background: red;
 }
-.cards-videos{
-    margin-top: 20px;
-    width: 120px;
-    background: transparent;
-}
 
 .box-sessoes{
     margin: 0% auto;
-    width: 90%;
+    width: 89%;
     padding: 20px;
 }
 .container-sessoes{
     margin-top: -20px;
     width: 100%;
-    padding: 10px;
-    background: #d8d8d8;
+    padding: 10px 20px;
+    background: #f2f2f2;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
     border-radius: 3px;
 }
 .container-sessoes h2{
-    font-size: .8em;
+    font-size: 1em;
     color:#333;
     font-weight: 500;
+    margin-left: 20px;
 }
 .container-sessoes h2::after{
     content: '';
@@ -63,8 +60,21 @@
     height: 2px;
     background: red;
 }
-.content-sessoes{
+.card{
+    width: 240px;
+    padding: 10px;
+    height: 150px;
+    margin-top: 20px;
+    background: #f2f2f2;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+    border-radius: 3px;
+
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.container-card{
+    display: flex;
     flex-direction: row;
 }

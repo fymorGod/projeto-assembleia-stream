@@ -1,10 +1,20 @@
+import { useEffect, useState } from "react";
+import { api } from '../api/app';
 import { Cronograma } from "../components/Cronograma/Cronograma";
 import { Navbar } from "../components/NavBar/Navbar";
 import { PlayerVideo } from "../components/PlayerVideo/PlayerVideo";
-import ReactPlayer from "react-player";
 import '../styles/home.css';
 
 export function Home() {
+    const [videos, setVideo] = useState([])
+
+    useEffect(() => {
+        api.get('/search/').then(response => {
+            console.log(response.data[0].title);
+            setVideo(response.data);
+        })
+    }, [])
+
     return (
         <div>
             <Navbar />
@@ -15,53 +25,28 @@ export function Home() {
             <div className="box-destaque">
                 <div className="container-destaque">
                     <h2>Destaques</h2>
-                    <div className="content-sessoes">
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
+                </div>
+                <div className="card">
+                    <div className="thumbnail">
+                        <h2>aqui vai a imagem</h2>
                     </div>
                 </div>
+                
             </div>
 
             <div className="box-sessoes">
                 <div className="container-sessoes">
                     <h2>Sessões</h2>
-                    <div className="content-sessoes">
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                        <div className="cards-videos">
-                            <ReactPlayer width='120px' height="80px" controls url="https://www.youtube.com/watch?v=mu5CqEJ1e6E" />
-                        </div>
-                    </div>
                 </div>
+                {
+                    videos.map(video => (
+                        <div key={video.id} className="card">
+                            <div>
+                                <p>{video.title} </p>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )

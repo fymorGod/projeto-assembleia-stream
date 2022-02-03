@@ -4,7 +4,7 @@ export function Cronograma(){
     return(
         <div className="cronograma-content">
            <div className="title-cronograma">
-               <p>Programação</p>
+               <h2>Programação</h2>
                <input type="date" />
            </div>
            <div className="content-programacao">
