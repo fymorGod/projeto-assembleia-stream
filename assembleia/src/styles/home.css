@@ -77,12 +77,15 @@
 .card img {
     width: 240px;
     height: 150px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .card p{
     color: #333;
     font-weight: 500;
     font-size: .8rem;
+    text-align: center;
 }
 .container-card{
     display: flex;
