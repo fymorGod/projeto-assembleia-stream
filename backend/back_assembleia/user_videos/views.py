@@ -34,10 +34,11 @@ def save_video(request):
         print(data_dicionario['file'])
 
         Video.objects.create(title=data_dicionario['file'], description=data_dicionario['description'], video=data_dicionario['file'], destaque=data_dicionario['destaque'])
-        return HttpResponse({'message':'Video inserido'}, status=200)
-        # return Response(data_dicionario, status=status.HTTP_201_CREATED)
-
+        
         # serializer = VideoSerializer(data=data_dicionario)
+        # print(serializer)
+
+        return HttpResponse({'message':'Video inserido'}, status=200)
 
         # if serializer.is_valid():
         #     print('\né valido')
