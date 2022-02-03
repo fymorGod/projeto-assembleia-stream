@@ -15,3 +15,6 @@ class Video(models.Model):
     ]
 
     destaque = models.CharField(max_length=10, choices=destaque_choices, default=DESTAQUE_NAO)
+
+    def __str__(self) -> str:
+        return self.title

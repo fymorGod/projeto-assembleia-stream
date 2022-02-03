@@ -24,8 +24,18 @@ def videos_list(request):
 @api_view(['POST'])
 def save_video(request):
     if request.method == 'POST':
+
+        print('\n\nantes do serializer:')
+        print(request.data)
+
         serializer = VideoSerializer(data=request.data)
+        print('\n\ndepois do serializer:')
+        print(serializer)
+        print('\n\n')
+
+
         if serializer.is_valid():
+            print('\né valido')
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
