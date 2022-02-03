@@ -22,6 +22,6 @@ from django.urls import path, re_path
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('search/', search_views.index),
-    re_path('videos/', user_videos_views.videos_list),
+    re_path('videos_get/', user_videos_views.videos_list),
     re_path('videos_post/', user_videos_views.save_video)
 ]
