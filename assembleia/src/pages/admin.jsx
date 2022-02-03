@@ -8,15 +8,15 @@ export function Admin() {
     const [file, setFile] = useState('');
     const [description, setDescription] = useState('');
     const [destaque, setDestaque] = useState('');
-    // {
-    //     title: title,
-    //     'file': file.name,
-    //     description: description,
-    //     destaque: destaque
-    // }
+
     const handleCreatedVideo = async e => {
         e.preventDefault();
-        await api.post('/videos_post/',file).then(response => {
+        await api.post('/videos_post/',{
+            title: title,
+            'file': file,
+            description: description,
+            destaque: destaque
+        }).then(response => {
             console.log(response.data);
         })
 
