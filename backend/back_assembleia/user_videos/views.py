@@ -3,8 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 
-from backend.back_assembleia.user_videos.serializers import VideoSerializer
-
+from .serializers import VideoSerializer
 from .models import Video
 
 '''
