@@ -1,12 +1,12 @@
 .box-content{
     margin-top: 15px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: row;
 }
 .box-destaque{
     margin: 0% auto;
-    width: 89%;
+    width: 74%;
     padding: 20px;
 }
 .container-destaque{
@@ -34,7 +34,7 @@
 
 .box-sessoes{
     margin: 0% auto;
-    width: 89%;
+    width: 74%;
     padding: 20px;
 }
 .container-sessoes{
