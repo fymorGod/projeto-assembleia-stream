@@ -3,6 +3,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 
+from backend.back_assembleia.user_videos.serializers import VideoSerializer
+
 from .models import Video
 
 '''
@@ -12,9 +14,17 @@ Funções GET:
 3. 
 '''
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def videos_list(request):
     if request.method == 'GET':
-        videos = Video.objects.all()
-        print(videos)
-        return Response(videos)
+        videos = Video.objects.all()        
+        serializer = VideoSerializer(videos, context={'request':request}, many=True)
+        
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = VideoSerializer(data= request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
