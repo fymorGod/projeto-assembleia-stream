@@ -14,18 +14,17 @@ export function Admin() {
             'Content-Type': 'application/json'
         }
     }
-    const formData = new FormData();
-    formData.append('file', file);
+
     const handleCreatedVideo = async e => {
         e.preventDefault();
-        await api.post('/videos_post/',{
-            title: title,
-            file: formData,
-            description: description,
-            destaque: destaque
-        }, headers).then(response => {
-            console.log(response.data);
-        })
+        // await api.post('/videos_post/',{
+        //     title: title,
+        //     file: file,
+        //     description: description,
+        //     destaque: destaque
+        // }, headers).then(response => {
+        //     console.log(response.data);
+        // })
 
         console.log(file)
     }
