@@ -16,7 +16,7 @@ export function PlayerVideo(){
                 <span>Ao Vivo</span>
             </div>
             <div className="box-videos">
-                <ReactPlayer controls  width='640px' height="360px" url="https://www.youtube.com/watch?v=mu5CqEJ1e6E"/>
+                <ReactPlayer controls  width='640px' height="360px" url="https://www.youtube.com/watch?v=sTU6MLuk8tA"/>
             </div>
         </div>
     )
