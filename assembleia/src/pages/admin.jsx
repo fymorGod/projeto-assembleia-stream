@@ -5,18 +5,20 @@ import '../styles/admin.css'
 export function Admin() {
 
     const [title, setTitle] = useState('');
-    const [file, setFile] = useState('');
+    const [file, setFile] = useState();
     const [description, setDescription] = useState('');
     const [destaque, setDestaque] = useState('');
+    
+    const uploadData = new FormData();
+
+    uploadData.append('title', title)
+    uploadData.append('file', file)
+    uploadData.append('description', description)
+    uploadData.append('destaque', destaque)
 
     const handleCreatedVideo = async e => {
         e.preventDefault();
-        await api.post('/videos_post/',{
-            title: title,
-            'file': file,
-            description: description,
-            destaque: destaque
-        }).then(response => {
+        await api.post('/videos_post/', uploadData).then(response => {
             console.log(response.data);
         })
 
