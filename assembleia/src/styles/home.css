@@ -63,7 +63,7 @@
 .card{
     width: 240px;
     padding: 10px;
-    height: 150px;
+    height: 180px;
     margin-top: 20px;
     background: #f2f2f2;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
@@ -76,8 +76,14 @@
 }
 
 .card img {
-    width: 150px;
-    height: 150px;
+    width: 240px;
+    height: 100px;
+
+}
+.card p{
+    color: #333;
+    font-weight: 500;
+    font-size: .8rem;
 }
 .container-card{
     display: flex;
