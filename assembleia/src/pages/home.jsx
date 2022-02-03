@@ -31,6 +31,7 @@ export function Home() {
                         <h2>aqui vai a imagem</h2>
                     </div>
                 </div>
+                
             </div>
 
             <div className="box-sessoes">
