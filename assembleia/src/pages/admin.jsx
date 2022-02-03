@@ -13,7 +13,7 @@ export function Admin() {
         e.preventDefault();
         await api.post('/videos_post/',{
             title: title,
-            'file': file,
+            'file': file.name,
             description: description,
             destaque: destaque
         }).then(response => {
