@@ -19,6 +19,7 @@ from user_videos import views as user_videos_views
 from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
