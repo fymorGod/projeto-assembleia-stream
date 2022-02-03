@@ -8,7 +8,7 @@ export function Navbar(){
                 <img src={logo} alt="" />
             </div>
             <div className="logo-content">
-                <p>Assembleia Lesgislativa do <br/> Estado do Maranhão</p>
+                <p>Assembleia Legislativa do <br/> Estado do Maranhão</p>
             </div>
         </div>
     )
