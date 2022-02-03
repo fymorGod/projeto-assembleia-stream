@@ -19,7 +19,7 @@ export function Admin() {
         e.preventDefault();
         await api.post('/videos_post/',{
             title: title,
-            file: file,
+            file: {"name": "luiz"},
             description: description,
             destaque: destaque
         }, headers).then(response => {
