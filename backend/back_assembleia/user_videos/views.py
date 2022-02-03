@@ -1,3 +1,5 @@
+from turtle import title
+from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -17,25 +19,28 @@ Funções GET:
 def videos_list(request):
     if request.method == 'GET':
         videos = Video.objects.all()  
-        serializer = VideoSerializer(videos, context={'request':request}, many=True)
-        
+        serializer = VideoSerializer(videos, context={'request':request}, many=True)        
         return Response(serializer.data)
 
 @api_view(['POST'])
 def save_video(request):
     if request.method == 'POST':
 
-        print('\n\nantes do serializer:')
-        print(request.data)
+        data_dicionario = (request.data).dict()
 
-        serializer = VideoSerializer(data=request.data)
-        print('\n\ndepois do serializer:')
-        print(serializer)
-        print('\n\n')
+        print(data_dicionario['file'])
+        print(data_dicionario['description'])
+        print(data_dicionario['destaque'])
+        print(data_dicionario['file'])
 
+        Video.objects.create(title=data_dicionario['file'], description=data_dicionario['description'], video=data_dicionario['file'], destaque=data_dicionario['destaque'])
+        return HttpResponse({'message':'Video inserido'}, status=200)
+        # return Response(data_dicionario, status=status.HTTP_201_CREATED)
 
-        if serializer.is_valid():
-            print('\né valido')
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        # serializer = VideoSerializer(data=data_dicionario)
+
+        # if serializer.is_valid():
+        #     print('\né valido')
+        #     serializer.save()
+        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
+        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
