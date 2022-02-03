@@ -16,7 +16,7 @@ export function PlayerVideo(){
                 <span>Ao Vivo</span>
             </div>
             <div className="box-videos">
-                <ReactPlayer controls  width='640px' height="360px" url="https://www.youtube.com/watch?v=sTU6MLuk8tA"/>
+            <iframe class="jmvplayer" src="https://player.jmvstream.com/lvw/AXVGtbqMZD8whUOl9y9kRWoyQ4ehDu" allowfullscreen allow="autoplay; fullscreen" frameborder="0" width="853" height="410"></iframe>
             </div>
         </div>
     )
