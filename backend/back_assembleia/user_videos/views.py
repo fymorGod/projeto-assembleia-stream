@@ -16,7 +16,7 @@ Funções GET:
 @api_view(['GET'])
 def videos_list(request):
     if request.method == 'GET':
-        videos = Video.objects.all()        
+        videos = Video.objects.all()  
         serializer = VideoSerializer(videos, context={'request':request}, many=True)
         
         return Response(serializer.data)
@@ -24,7 +24,7 @@ def videos_list(request):
 @api_view(['POST'])
 def save_video(request):
     if request.method == 'POST':
-        serializer = VideoSerializer(data= request.data)
+        serializer = VideoSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
