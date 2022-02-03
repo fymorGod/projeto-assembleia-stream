@@ -9,17 +9,11 @@ export function Admin() {
     const [description, setDescription] = useState('');
     const [destaque, setDestaque] = useState('');
 
-    const headers = {
-        'headers': {
-            'Content-Type': 'application/json'
-        }
-    }
-
     const handleCreatedVideo = async e => {
         e.preventDefault();
         await api.post('/videos_post/',{
             title: title,
-            'file': file.name,
+            'file': file,
             description: description,
             destaque: destaque
         }).then(response => {
