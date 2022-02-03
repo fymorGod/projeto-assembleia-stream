@@ -38,6 +38,8 @@ export function Home() {
                 <div className="container-sessoes">
                     <h2>Sessões</h2>
                 </div>
+                <div className="container-card">
+
                 {
                     videos.map(video => (
                         <div key={video.id} className="card">
@@ -47,6 +49,7 @@ export function Home() {
                         </div>
                     ))
                 }
+                </div>
             </div>
         </div>
     )
