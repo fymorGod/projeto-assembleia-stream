@@ -30,7 +30,7 @@
     margin-right: 10px;
     width: 40px;
     height: 2px;
-    background: red;
+    background: rgb(218, 172, 22);
 }
 
 .box-sessoes{
@@ -58,7 +58,7 @@
     margin-right: 10px;
     width: 40px;
     height: 2px;
-    background: red;
+    background: rgb(19, 107, 165);
 }
 .card{
     width: 280px;
