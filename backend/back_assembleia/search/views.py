@@ -26,7 +26,7 @@ def index(request):
         search_params = {
             'part':'snippet',
             # 'q':'learn python',
-            'maxResults': 6,
+            'maxResults': 5,
             'channelId':'UCQTEYscjlvwG_1j0a0Wky0w',
             'order':'date',
             'key': settings.YOUTUBE_DATA_API_KEY,
@@ -51,7 +51,7 @@ def index(request):
             'key': settings.YOUTUBE_DATA_API_KEY,
             'part':'snippet, contentDetails',
             'id':','.join(video_ids),
-            'maxResults': 6
+            'maxResults': 5
         }
 
         # Faz a request com base na url de busca e usa os parâmetros de busca
