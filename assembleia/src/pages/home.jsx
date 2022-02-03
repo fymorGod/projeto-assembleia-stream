@@ -26,12 +26,18 @@ export function Home() {
                 <div className="container-destaque">
                     <h2>Destaques</h2>
                 </div>
-                <div className="card">
-                    <div className="thumbnail">
-                        <h2>aqui vai a imagem</h2>
-                    </div>
-                </div>
-                
+                <div className="container-card">
+                {
+                    videos.map(video => (
+                        <div key={video.id} className="card">
+                            <div>
+                                <img src={video.thumbnail} alt="" />
+                                <p>{video.title} </p>
+                            </div>
+                        </div>
+                    ))
+                }
+                </div>                
             </div>
 
             <div className="box-sessoes">
@@ -44,6 +50,7 @@ export function Home() {
                     videos.map(video => (
                         <div key={video.id} className="card">
                             <div>
+                                <img src={video.thumbnail} alt="" />
                                 <p>{video.title} </p>
                             </div>
                         </div>
