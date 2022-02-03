@@ -14,7 +14,7 @@ Funções GET:
 3. 
 '''
 
-@api_view(['GET', 'POST'])
+@api_view(['GET'])
 def videos_list(request):
     if request.method == 'GET':
         videos = Video.objects.all()        
@@ -22,7 +22,9 @@ def videos_list(request):
         
         return Response(serializer.data)
 
-    elif request.method == 'POST':
+@api_view(['POST'])
+def save_video(request):
+    if request.method == 'POST':
         serializer = VideoSerializer(data= request.data)
         if serializer.is_valid():
             serializer.save()
