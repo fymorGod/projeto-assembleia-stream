@@ -30,7 +30,7 @@ export function PlayerVideo() {
                         <div key={video.pk} className="card">
                             <div>
                                 <img src={video.thumbnail} alt="" />
-                                <p>{video.video} </p>
+                                <ReactPlayer url={video.video}/>
                             </div>
                         </div>
                     ))
