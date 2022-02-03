@@ -16,7 +16,7 @@ export function PlayerVideo(){
                 <span>Ao Vivo</span>
             </div>
             <div className="box-videos">
-            <iframe class="jmvplayer" src="https://player.jmvstream.com/lvw/AXVGtbqMZD8whUOl9y9kRWoyQ4ehDu" allowfullscreen allow="autoplay; fullscreen" frameborder="0" width="853" height="410"></iframe>
+            <iframe class="jmvplayer" src="https://player.jmvstream.com/lvw/AXVGtbqMZD8whUOl9y9kRWoyQ4ehDu" allowfullscreen allow="autoplay; fullscreen" frameborder="0" width="710" height="400"></iframe>
             </div>
         </div>
     )
