@@ -4,14 +4,17 @@ from django.db import models
 class Video(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    video = models.FileField()
+    video = models.FileField(upload_to='video/%y')
 
-    DESTAQUE_SIM = 'DS'
-    DESTAQUE_NAO = 'DN'
+    DESTAQUE_SIM = 'destaque_S'
+    DESTAQUE_NAO = 'destaque_n'
 
     destaque_choices = [
-        (DESTAQUE_SIM, 'Destaque_S'),
-        (DESTAQUE_NAO, 'Destaque_N')
+        (DESTAQUE_SIM, 'sim'),
+        (DESTAQUE_NAO, 'nao')
     ]
 
     destaque = models.CharField(max_length=10, choices=destaque_choices, default=DESTAQUE_NAO)
+
+    def __str__(self) -> str:
+        return self.title
