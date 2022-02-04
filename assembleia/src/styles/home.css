@@ -1,68 +1,60 @@
+.man-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 250px;
+    padding-left: 250px;
+}
 .box-content{
-    margin-top: 15px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-direction: row;
+    background-color: #f2f2f2;
 }
 .box-destaque{
-    margin: 0% auto;
-    width: 74%;
-    padding: 20px;
+    margin-top: 30px;
+    width: 100%;
 }
 .container-destaque{
     margin: 0 auto;
     width: 100%;
     padding: 10px 20px;
-    background: #f2f2f2;
+    background: #e46d29;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
-    border-radius: 3px;
+    border-radius: 8px;
 }
 .container-destaque h2{
     font-size: 1em;
-    color:#333;
+    color:#f2f2f2;
     font-weight: 500;
-    margin-left: 20px;
+    text-shadow: 2px 2px rgba(0, 0, 0, .4);
 }
-.container-destaque h2::after{
-    content: '';
-    display: block;
-    margin-right: 10px;
-    width: 40px;
-    height: 2px;
-    background: rgb(218, 172, 22);
-}
-
 .box-sessoes{
-    margin: 0% auto;
-    width: 74%;
-    padding: 20px;
+    margin-top: 40px;
+    width: 100%;
 }
 .container-sessoes{
     margin-top: -20px;
     width: 100%;
     padding: 10px 20px;
-    background: #f2f2f2;
+    background: #05408f;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
-    border-radius: 3px;
+    border-radius: 8px;
 }
 .container-sessoes h2{
     font-size: 1em;
-    color:#333;
+    color:#f2f2f2;
     font-weight: 500;
-    margin-left: 20px;
+    text-shadow: 2px 2px rgba(0, 0, 0, .4);
 }
-.container-sessoes h2::after{
-    content: '';
-    display: block;
-    margin-right: 10px;
-    width: 40px;
-    height: 2px;
-    background: rgb(19, 107, 165);
-}
+
 .card{
-    width: 280px;
-    padding: 10px;
-    height: 190px;
+    width: 320px;
+    padding: 25px;
+    height: 210px;
     margin-top: 20px;
     background: #f2f2f2;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
@@ -75,8 +67,8 @@
 }
 
 .card img {
-    width: 240px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
