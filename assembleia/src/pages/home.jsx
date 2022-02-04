@@ -15,6 +15,15 @@ export function Home() {
         })
     }, [])
 
+    const elements = document.querySelectorAll('.with-js p')
+    const LIMIT = 15
+
+    for (let p of elements){
+        const aboveLimit = p.innerText.lenght > LIMIT
+        const dotsOrEmpty = aboveLimit ? '...' : ''
+        p.innerText = p.innerText.substring(0, LIMIT) + dotsOrEmpty
+    }
+
     return (
         <div className="man-content">
             <Navbar />
@@ -32,7 +41,9 @@ export function Home() {
                         <div key={video.id} className="card">
                             <div>
                                 <img src={video.thumbnail} alt="" />
-                                <p>{video.title} </p>
+                                <div className="with-css">
+                                    <p>{video.title} </p>
+                                </div>
                             </div>
                         </div>
                     ))
@@ -51,7 +62,9 @@ export function Home() {
                         <div key={video.id} className="card">
                             <div>
                                 <img src={video.thumbnail} alt="" />
-                                <p>{video.title} </p>
+                                <div className="with-css">
+                                    <p>{video.title} </p>
+                                </div>
                             </div>
                         </div>
                     ))
