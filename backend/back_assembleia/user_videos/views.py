@@ -27,26 +27,12 @@ def videos_list(request):
 
 @api_view(['POST'])
 def save_video(request):
-    if request.method == 'POST':
-        data_dicionario = request.data
-
-        print(data_dicionario['file'])
-        print(data_dicionario['description'])
-        print(data_dicionario['destaque'])
-        print(data_dicionario['file'])
-
-        Video.objects.create(title=data_dicionario['file'], description=data_dicionario['description'], video=data_dicionario['file'], destaque=data_dicionario['destaque'])
-        return HttpResponse({'message':'Video inserido'}, status=200)
-        
-        # serializer = VideoSerializer(data=data_dicionario)
-        # print(serializer.data)
-
-
-        # if serializer.is_valid():
-        #     print('\né valido')
-        #     serializer.save()
-        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
-        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    if request.method == 'POST':        
+        serializer = VideoSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['DELETE'])
 def delete_video(request, pk):
