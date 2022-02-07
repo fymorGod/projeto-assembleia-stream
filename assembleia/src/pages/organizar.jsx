@@ -38,6 +38,7 @@ export function Organizar() {
                         </div>
                     </div>
                     <div className="box-forms">
+                        <h2>Organização dos vídeos</h2>
                         <div className="box-cards">
                             {
                                 videos.map(video => (

@@ -161,6 +161,9 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+.box-forms h2{
+    font-size: 1.2rem;
+}
 .card{
     width: 100%;
 }
