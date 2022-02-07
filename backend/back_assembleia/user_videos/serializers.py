@@ -8,4 +8,4 @@ class VideoSerializer(serializers.ModelSerializer):
     video = serializers.FileField()
     class Meta:
         model = Video
-        fields = ('pk', 'title', 'description', 'video', 'destaque')
+        fields = ('pk', 'title', 'description', 'file', 'destaque')
