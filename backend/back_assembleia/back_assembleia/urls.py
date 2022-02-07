@@ -31,12 +31,12 @@ urlpatterns = [
     re_path('videos_post/', user_videos_views.save_video),
     re_path('video_delete/(?P<pk>\d+)$', user_videos_views.delete_video),
     re_path(r'video_detail/(?P<pk>\d+)$', user_videos_views.video_detail),
-    re_path('video_update/(?P<pk>\d+)$', user_videos_views.update_video),
+    re_path(r'video_update/(?P<pk>\d+)$', user_videos_views.update_video),
     re_path('cronograma_get/', cronograma_videos_views.cronogramas_list),
     re_path('cronograma_post/', cronograma_videos_views.create_cronograma),
-    re_path('cronograma_detail/', cronograma_videos_views.cronograma_detail),
-    re_path('cronograma_delete/', cronograma_videos_views.delete_cronograma),
-    re_path('cronograma_update/', cronograma_videos_views.update_cronograma),
+    re_path(r'cronograma_detail/(?P<pk>\d+)$', cronograma_videos_views.cronograma_detail),
+    re_path(r'cronograma_delete/(?P<pk>\d+)$', cronograma_videos_views.delete_cronograma),
+    re_path(r'cronograma_update/(?P<pk>\d+)$', cronograma_videos_views.update_cronograma),
     re_path('admin/login/submit/',views.submit_login)
 ]
 
