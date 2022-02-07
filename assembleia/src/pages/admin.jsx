@@ -51,11 +51,11 @@ export function Admin() {
                                 <h2>Destaque</h2>
                             </div>
                             <div className="dest">
-                                <input type="checkbox" name="destaque" value="sim" id="destaque" onChange={e=> setDestaque(e.target.value)} />
-                                <label htmlFor="destaque">Sim</label>
+                                <input type="checkbox" name="destaque1" value="sim" id="destaque1" onChange={e=> setDestaque(e.target.value)} />
+                                <label htmlFor="destaque1">Sim</label>
 
-                                <input type="checkbox" name="destaque" value="nao" id="destaque" onChange={e=> setDestaque(e.target.value)} />
-                                <label htmlFor="destaque">Não</label>
+                                <input type="checkbox" name="destaque2" value="nao" id="destaque2" onChange={e=> setDestaque(e.target.value)} />
+                                <label htmlFor="destaque2">Não</label>
                             </div>
                             <button type="submit">Enviar video</button>
                         </form>

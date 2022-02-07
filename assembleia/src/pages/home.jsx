@@ -16,7 +16,7 @@ export function Home() {
     }, [])
 
     return (
-        <div>
+        <div className="man-content">
             <Navbar />
             <div className="box-content">
                 <PlayerVideo />
