@@ -1,30 +1,20 @@
 import { useEffect, useState } from "react";
-import ReactPlayer from "react-player";
 import { api } from "../../api/app";
-import '../../styles/home.css';
 
-export function Modal({closeModal, id_video}){
+export function Modal({closeModal}){
     const [videos, setVideo] = useState([]);
-
+    
     useEffect(() => {
-        api.get('/search/', {
-            id_video: id_video
-        }).then(response => {
+        api.get('/search/').then(response => {
+            console.log(response.data[0].title);
             setVideo(response.data);
         })
     }, [])
-    
     return(
         <div className="modal">
             <div className="modalContainer">
                 <button onClick={()=> closeModal(false)}> X </button>
-                {
-                    videos.map(video => (
-                        <div>
-                            <ReactPlayer url={video.link}/>
-                        </div>
-                    ))
-                }
+                <h2>salve</h2>
             </div>
         </div>
     )

@@ -33,14 +33,14 @@ export function Login() {
 
                     <div className="input-box">
                         <label htmlFor="username">Usuário</label>
-                        <input type="text" id='username' name='username'  onChange={e => setUser(e.target.value)}/>
+                        <input type="text" id='username' name='username' />
                     </div>
 
                     <div className="input-box">
                         <label htmlFor="password">Senha</label>
-                        <input type="password" id='password' name='password'  onChange={e => setPassword(e.target.value)}/>
+                        <input type="password" id='password' name='password' />
                     </div>
-                    <button onClick={handleLogin}>Entrar</button>
+                    <button>Entrar</button>
                 </div>
             </div>
         </div>

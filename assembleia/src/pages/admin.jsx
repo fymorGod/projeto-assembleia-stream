@@ -16,8 +16,6 @@ export function Admin() {
     uploadData.append('description', description)
     uploadData.append('destaque', destaque)
 
-
-
     const handleCreatedVideo = async e => {
         e.preventDefault();
         await api.post('/videos_post/', uploadData).then(response => {
@@ -60,7 +58,6 @@ export function Admin() {
                             </div>
                             <button type="submit">Enviar video</button>
                         </form>
-                        <a href='/register' >Esqueci minha senha</a>
                     </div>
                 </div>
             </div>
