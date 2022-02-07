@@ -17,6 +17,7 @@ Including another URLconf
 from user_videos.views import *
 from search import views as search_views
 from user_videos import views as user_videos_views
+from app_cronograma import views as cronograma_videos_views
 from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls.static import static
@@ -31,6 +32,11 @@ urlpatterns = [
     re_path('video_delete/(?P<pk>\d+)$', user_videos_views.delete_video),
     re_path(r'video_detail/(?P<pk>\d+)$', user_videos_views.video_detail),
     re_path('video_update/(?P<pk>\d+)$', user_videos_views.update_video),
+    re_path('cronograma_get/', cronograma_videos_views.cronogramas_list),
+    re_path('cronograma_post/', cronograma_videos_views.create_cronograma),
+    re_path('cronograma_detail/', cronograma_videos_views.cronograma_detail),
+    re_path('cronograma_delete/', cronograma_videos_views.delete_cronograma),
+    re_path('cronograma_update/', cronograma_videos_views.update_cronograma),
     re_path('admin/login/submit/',views.submit_login)
 ]
 
