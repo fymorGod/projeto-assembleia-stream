@@ -26,7 +26,6 @@ export function Admin() {
     }
     return (
         <>
-            <Navbar />
             <div className="container-admin-sistem">
                 <div className="container-forms">
                     <div className="box-menu">
