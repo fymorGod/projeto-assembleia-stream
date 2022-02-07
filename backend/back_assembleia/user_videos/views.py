@@ -21,7 +21,7 @@ Funções:
 @api_view(['GET'])
 def videos_list(request):
     if request.method == 'GET':
-        videos = Video.objects.all()  
+        videos = Video.objects.all()          
         serializer = VideoSerializer(videos, context={'request':request}, many=True)        
         return Response(serializer.data)
 
@@ -52,7 +52,7 @@ def save_video(request):
 def delete_video(request, pk):
 
     try:
-        video = Video.objects.get(pk=pk)
+        video = Video.objects.get(pk=pk)        
     except Video.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -63,13 +63,25 @@ def delete_video(request, pk):
 @api_view(['GET'])
 def video_detail(request, pk):
 
-    try:
-        video = Video.objects.get(pk=pk)
-    except Video.DoesNotExist:
+    try:        
+        # video = Video.objects.get(pk=pk)
+        video = []
+        videos = Video.objects.all()          
+        serializer = VideoSerializer(videos, context={'request':request}, many=True)   
+        print(pk)
+
+        for v in serializer.data:
+            print(v['pk'])
+
+            if(pk == v['pk']):                            
+                video = v
+                print('sim')
+
+    except Video.DoesNotExist:        
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    if request.method == 'GET':        
-        serializer = VideoSerializer(video, context={'request':request}, many=True)        
+    if request.method == 'GET': 
+        serializer = VideoSerializer(video, context={'request':request}, many=True)                   
         return Response(serializer.data)
 
 @api_view(['PUT'])
