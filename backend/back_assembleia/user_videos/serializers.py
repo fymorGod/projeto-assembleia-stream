@@ -4,7 +4,8 @@ from rest_framework import serializers
 from .models import Video
 
 class VideoSerializer(serializers.ModelSerializer):
-
+    
+    video = serializers.FileField()
     class Meta:
         model = Video
         fields = ('pk', 'title', 'description', 'video', 'destaque')
