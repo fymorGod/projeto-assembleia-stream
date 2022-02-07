@@ -3,11 +3,9 @@ import '../styles/login.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-export function Login() {
-        
+export function Register() {
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
-
     //const [] = useState()
     // useEffect(() => {
     //     api.get('/admin/login').then((response) => {
@@ -15,7 +13,7 @@ export function Login() {
     //     })
     // }, [])
 
-    function handleLogin() {
+    function handleCreateUser() {
         /**
          * Lógica de auth -> pegar os usuários do banco e verificar se o 
          * username passado no input existe na base dados
@@ -28,21 +26,21 @@ export function Login() {
     return (
         <div className='container-login'>
             <div className="card-box">
-                <h2>Login</h2>
+                <h2>Cadastro</h2>
                 <p>Assembleia Legislativa</p>
                 
                 <div className="form-login">
 
                     <div className="input-box">
                         <label htmlFor="username">Usuário</label>
-                        <input type="text" id='username' name='username'  onChange={e => setUser(e.target.value)}/>
+                        <input type="text" id='username' name='username' onChange={e => setUser(e.target.value)}/>
                     </div>
 
                     <div className="input-box">
                         <label htmlFor="password">Senha</label>
-                        <input type="password" id='password' name='password'  onChange={e => setPassword(e.target.value)}/>
+                        <input type="password" id='password' name='password' onChange={e => setPassword(e.target.value)}/>
                     </div>
-                    <button onClick={handleLogin}>Entrar</button>
+                    <button>Registrar</button>
                 </div>
             </div>
         </div>
