@@ -113,10 +113,10 @@
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
     border-radius: 3px;
 }
-.box-forms form input[type='checkbox']{
+.box-forms form input[type='radio']{
     margin-top: 10px;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
 }
 .box-forms button{
     width: 160px;
@@ -130,7 +130,7 @@
     cursor: pointer;
 }
 .box-forms .title{
-    margin-left: 20px;
+    margin-top: 10px;
     width: 100%;
     background: transparent;
     font-size: .7rem;
@@ -138,22 +138,36 @@
     font-weight: 500;
     text-align: start;
 }
-
-.box-forms .title h2::after{
-    content: '';
-    width: 70px;
-    background: rgb(119, 119, 119);
-    height: 2px;
-    display: block;
-}
 .dest{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 10px;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 .dest input{
     margin-right: -30px;
+}
+.box-forms form a{
+    text-decoration: underline;
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 400;
+}
+.box-cards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.box-forms h2{
+    font-size: 1.2rem;
+}
+.card{
+    width: 100%;
+}
+.card img{
+    width: 20px;
+    height: 20px;
 }

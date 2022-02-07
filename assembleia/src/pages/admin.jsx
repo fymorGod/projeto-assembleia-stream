@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { api } from '../api/app';
-import { Navbar } from '../components/NavBar/Navbar'
+import { useNavigate } from 'react-router';
 import '../styles/admin.css'
+
 export function Admin() {
 
     const [title, setTitle] = useState('');
@@ -16,6 +17,14 @@ export function Admin() {
     uploadData.append('description', description)
     uploadData.append('destaque', destaque)
 
+
+    const navigate = useNavigate();
+
+    function handleOrganizar() {
+        navigate('/admin/system/organizar')
+    }
+
+    
     const handleCreatedVideo = async e => {
         e.preventDefault();
         await api.post('/videos_post/', uploadData).then(response => {
@@ -24,6 +33,8 @@ export function Admin() {
 
         console.log(file.name)
     }
+
+
     return (
         <>
             <div className="container-admin-sistem">
@@ -35,14 +46,14 @@ export function Admin() {
                         </div>
                         <div className="box-buttons">
                             <button>Inserir vídeos</button>
-                            <button>Organizar</button>
+                            <button onClick={handleOrganizar}>Organizar</button>
                             <button>Administrar Streams</button>
                         </div>
                     </div>
                     <div className="box-forms">
                         <form onSubmit={handleCreatedVideo}>
                             <label htmlFor="title-video">Título do Vídeo</label>
-                            <input type="text" name='title-video' id='title-video' onChange={e => setTitle(e.target.value)} />
+                            <input type="text" placeholder='Inserir o video' name='title-video' id='title-video' onChange={e => setTitle(e.target.value)} />
                             <label htmlFor="video">Inserir o Vídeo</label>
                             <input type="file" name='video' id='video' onChange={e => setFile(e.target.files[0])} />
                             <textarea name="description" id="description" placeholder='Descrição do vídeo' onChange={e => setDescription(e.target.value)}></textarea>
@@ -50,13 +61,14 @@ export function Admin() {
                                 <h2>Destaque</h2>
                             </div>
                             <div className="dest">
-                                <input type="checkbox" name="destaque1" value="sim" id="destaque1" onChange={e=> setDestaque(e.target.value)} />
+                                <input  type="radio" name="destaque" value="sim" id="destaque1" onChange={e=> setDestaque(e.target.value)} />
                                 <label htmlFor="destaque1">Sim</label>
 
-                                <input type="checkbox" name="destaque2" value="nao" id="destaque2" onChange={e=> setDestaque(e.target.value)} />
+                                <input type="radio" name="destaque" value="nao" id="destaque2" onChange={e=> setDestaque(e.target.value)} />
                                 <label htmlFor="destaque2">Não</label>
                             </div>
                             <button type="submit">Enviar video</button>
+                            <a href='/admin/register' >Esqueci minha senha</a>
                         </form>
                     </div>
                 </div>
