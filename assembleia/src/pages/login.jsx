@@ -1,9 +1,11 @@
 //import api from '../api/app';
 import '../styles/login.css';
 import { useEffect } from 'react';
-//import { useState } from 'react';
+import { useState } from 'react';
 
 export function Login() {
+    const [username, setUser] = useState('');
+    const [password, setPassword] = useState('');
     //const [] = useState()
     // useEffect(() => {
     //     api.get('/admin/login').then((response) => {
