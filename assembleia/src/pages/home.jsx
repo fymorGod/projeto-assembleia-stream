@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { api } from '../api/app';
 import { Cronograma } from "../components/Cronograma/Cronograma";
+import { Modal } from "../components/Modal/Modal";
 import { Navbar } from "../components/NavBar/Navbar";
 import { PlayerVideo } from "../components/PlayerVideo/PlayerVideo";
 import '../styles/home.css';
 
 export function Home() {
     const [videos, setVideo] = useState([])
-
+    const [openModal, setOpenModal] = useState(false);
     useEffect(() => {
         api.get('/search/').then(response => {
             console.log(response.data[0].title);
@@ -35,10 +36,12 @@ export function Home() {
                 <div className="container-destaque">
                     <h2>Destaques</h2>
                 </div>
-                <div className="container-card">
+                <div className="container-card" >
                 {
                     videos.map(video => (
-                        <div key={video.id} className="card">
+                        <div key={video.id} className="card" onClick={()=> {
+                            setOpenModal(true);
+                        }}>
                             <div>
                                 <img src={video.thumbnail} alt="" />
                                 <div className="with-css">
@@ -48,6 +51,7 @@ export function Home() {
                         </div>
                     ))
                 }
+                {openModal && <Modal closeModal={setOpenModal}/>}
                 </div>                
             </div>
 
