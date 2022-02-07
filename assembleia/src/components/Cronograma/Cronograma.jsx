@@ -10,6 +10,9 @@ export function Cronograma(){
                <p>lorem ipsum sut almet</p>
                <p>lorem ipsum sut almet</p>
                <p>lorem ipsum sut almet</p>
+               <p>lorem ipsum sut almet</p>
+               <p>lorem ipsum sut almet</p>
+               <p>lorem ipsum sut almet</p>
            </div>
         </div>
     )

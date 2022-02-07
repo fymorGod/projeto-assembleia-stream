@@ -1,8 +1,8 @@
 .cronograma-content{
     width: 30%;
-    margin-left: 30px;
-    background: #1042a0;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+    margin-left: 10px!important;
+    background: #fff;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
     border-radius: 12px;
     margin-top: 90px;
 }
@@ -11,14 +11,13 @@
     justify-content: start;
     align-items: center;
     padding: 20px;
-    
 }
 
 .title-cronograma h2{
     margin-right: 35px;
     font-size: 1em;
-    font-weight: 500;
-    color: #f2f2f2;
+    font-weight: 600;
+    color: #004C7D;
 }
 
 .content-programacao{
@@ -31,7 +30,7 @@
 .content-programacao p{
     font-size: .8rem;
     text-align: start;
-    color: #f2f2f2;
+    color: #0d10af;
     margin-bottom: 20px;
     padding-bottom: 5px;
 }
@@ -40,6 +39,23 @@
     display: block;
     margin: 0 auto;
     width: 100%;
-    height: 2px;
-    background: #ffffff;
+    height: 1px;
+    background: #004C7D;
 }
+@media screen and (min-width: 860px) {
+    .cronograma-content{
+        width: 30%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+  } 
+
+@media screen and (max-width: 960px) {
+    .cronograma-content{
+        width: 100%;
+        
+        margin: 0 auto;
+    }
+
+  } 

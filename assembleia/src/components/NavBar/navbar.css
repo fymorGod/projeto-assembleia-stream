@@ -3,28 +3,34 @@
     height: 70px;
     display: flex;
     align-items: center;
-    background-color: #f2f2f2;
-    margin-top: 10px;
+    transition: all ease-in-out .3s;
+    background-color: #004C7D;
 }
 .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    float: left;
-
 }
 .bar .logo img{
     margin-top: 10px;
     width: 120px;
     height: 90px;
 }
-.bar .logo-content{
-    margin-left: -10px;
-}
 
 .bar .logo-content p{
     font-size: 1.2rem;
     text-align: center;
-    color: #424242;
+    color: #f2f2f2;
     font-weight: 500;
 }
+@media screen and (max-width: 960px) {
+    .bar{
+        justify-content: center;
+        background-color: #333;
+        margin-top: 0;
+        height: 80px;
+    }
+    .logo .logo-content p{
+        color: #f2f2f2;
+    }
+  } 
