@@ -39,7 +39,7 @@
     color: #f2f2f2;
     font-weight: 500;
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 760px) {
     .bar{
         justify-content: space-between;
         background-color: #004C7D;
@@ -48,10 +48,11 @@
         padding-right: 0;
     }
     .bar input{
-        width: 300px;
-        margin-right: 30px;
+        width: 100px;
     }
     .logo .logo-content p{
         color: #f2f2f2;
+        font-size: .8rem;
     }
+
   } 

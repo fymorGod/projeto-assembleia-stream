@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { api } from "../../api/app";
+import '../../styles/home.css';
 
 export function Modal({closeModal, id_video}){
     const [videos, setVideo] = useState([]);
