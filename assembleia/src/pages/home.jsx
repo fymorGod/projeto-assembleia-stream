@@ -9,6 +9,7 @@ import '../styles/home.css';
 export function Home() {
     const [videos, setVideo] = useState([])
     const [openModal, setOpenModal] = useState(false);
+
     useEffect(() => {
         api.get('/search/').then(response => {
             console.log(response.data[0].title);
@@ -48,10 +49,11 @@ export function Home() {
                                     <p>{video.title} </p>
                                 </div>
                             </div>
+                            {openModal && <Modal closeModal={setOpenModal} id_videos={video.id}/>}
                         </div>
                     ))
                 }
-                {openModal && <Modal closeModal={setOpenModal}/>}
+                
                 </div>                
             </div>
 

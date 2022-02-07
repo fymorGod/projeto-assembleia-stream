@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../../api/app";
 
-export function Modal({closeModal}){
+export function Modal({closeModal, id_videos}){
     const [videos, setVideo] = useState([]);
     
     useEffect(() => {
@@ -14,7 +14,13 @@ export function Modal({closeModal}){
         <div className="modal">
             <div className="modalContainer">
                 <button onClick={()=> closeModal(false)}> X </button>
-                <h2>salve</h2>
+                {
+                    videos.map(video => (
+                        <div>
+                            {video.link}
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )

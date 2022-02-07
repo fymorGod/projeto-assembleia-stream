@@ -4,6 +4,7 @@ import { BrowserRouter,Routes, Route} from 'react-router-dom';
 import { Admin } from "./pages/admin";
 import { Register } from "./pages/register";
 import { Organizar } from "./pages/organizar";
+import { AdmStreams } from "./pages/admStreams";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/admin/system' element={<Admin />} />
         <Route path='/admin/register' element={<Register />} />
         <Route path='/admin/system/organizar' element={<Organizar />} />
+        <Route path='/admin/system/adm-streams' element={<AdmStreams />} />
       </Routes>
     </BrowserRouter>
   );
