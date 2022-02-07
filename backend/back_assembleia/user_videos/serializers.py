@@ -3,9 +3,7 @@ from importlib.metadata import files
 from rest_framework import serializers
 from .models import Video
 
-class VideoSerializer(serializers.ModelSerializer):
-    
-    video = serializers.FileField()
+class VideoSerializer(serializers.ModelSerializer):    
     class Meta:
         model = Video
-        fields = ('pk', 'title', 'description', 'video', 'destaque')
+        fields = ('pk', 'title', 'description', 'file', 'destaque')

@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from user_videos.views import *
 from search import views as search_views
 from user_videos import views as user_videos_views
@@ -20,6 +21,7 @@ from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls.static import static
 from django.conf import settings
+from app_aunt import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +31,7 @@ urlpatterns = [
     re_path('video_delete/(?P<pk>\d+)$', user_videos_views.delete_video),
     re_path(r'video_detail/(?P<pk>\d+)$', user_videos_views.video_detail),
     re_path('video_update/(?P<pk>\d+)$', user_videos_views.update_video),
+    re_path('admin/login/submit/',views.submit_login)
 ]
 
 if settings.DEBUG:

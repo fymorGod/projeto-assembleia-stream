@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'search',
-    'user_videos'
+    'user_videos',
+    'app_aunt',
 ]
 
 MIDDLEWARE = [
