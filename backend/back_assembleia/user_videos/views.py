@@ -25,6 +25,7 @@ def videos_list(request):
         serializer = VideoSerializer(videos, context={'request':request}, many=True)        
         return Response(serializer.data)
 
+
 @api_view(['POST'])
 def save_video(request):
     if request.method == 'POST':        
@@ -33,6 +34,20 @@ def save_video(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def video_detail(request, pk):
+
+    try:        
+        video = Video.objects.get(pk=pk)
+
+    except Video.DoesNotExist:        
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET': 
+        serializer = VideoSerializer(video, context={'request':request})                   
+        return Response(serializer.data)
 
 @api_view(['DELETE'])
 def delete_video(request, pk):
@@ -46,33 +61,6 @@ def delete_video(request, pk):
         video.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-@api_view(['GET'])
-def video_detail(request, pk):
-
-    try:        
-        # video = Video.objects.get(pk=pk)
-        # video = []
-        # videos = Video.objects.all()          
-        # serializer = VideoSerializer(videos, context={'request':request}, many=True)   
-        # print(pk)
-
-        # for v in serializer.data:
-        #     print(v['pk'])
-
-        #     if(pk == v['pk']):                            
-        #         video = v
-        #         print('sim')
-        print(pk)
-        video = Video.objects.get(pk=pk)
-        print('Video: ', video)
-        print('Video type: ', type(video))
-
-    except Video.DoesNotExist:        
-        return Response(status=status.HTTP_404_NOT_FOUND)
-
-    if request.method == 'GET': 
-        serializer = VideoSerializer(video, context={'request':request}, many=True)                   
-        return Response(serializer.data)
 
 @api_view(['PUT'])
 def update_video(request, pk):
@@ -83,6 +71,8 @@ def update_video(request, pk):
         return Response(status=status.HTTP_404_NOT_FOUND)
     
     if request.method == 'PUT':
-        serializer = VideoSerializer(video, data=request.data, context={'request':request}, many=True)
-        Video.objects.update(data=serializer.data)
+        serializer = VideoSerializer(video, data=request.data, context={'request':request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
         return Response(status=status.HTTP_201_CREATED)
