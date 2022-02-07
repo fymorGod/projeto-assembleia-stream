@@ -24,8 +24,8 @@
     border-radius: 4px;
 }
 .container-destaque h2{
-    font-size: 1.2em;
-    color:#050511;
+    font-size: 1.4em;
+    color:#184868;
     font-weight: 500;
     text-align: center;
 }
@@ -35,7 +35,7 @@
     margin: 0 auto;
     height: 2px;
     display: block;
-    background-color: #050511;
+    background-color: #c01414;
 }
 
 .box-sessoes{
@@ -51,7 +51,7 @@
 .container-sessoes h2{
     text-align: center;
     font-size: 1.2em;
-    color:#050511;
+    color:#184868;
     font-weight: 500;
 }
 .container-sessoes h2::after{
@@ -60,7 +60,7 @@
     margin: 0 auto;
     height: 2px;
     display: block;
-    background-color: #050511;
+    background-color: #c01414;
 }
 .card{
     width: 300px;
@@ -105,10 +105,11 @@
 }
 
 .container-card{
-    max-width: 1200px;
-    margin: auto;
+    background-color: #f2f2f2;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
 }
 @media screen and (min-width: 860px) {
     .man-content {

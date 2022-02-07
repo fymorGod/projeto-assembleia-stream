@@ -16,6 +16,12 @@ export function Organizar() {
         navigate('/admin/system/organizar')
     }
 
+    
+    function handleAdmStreams() {
+        navigate('/admin/system/adm-streams')
+    }
+
+
     useEffect(()=> {
         api.get('/search').then(response => {
             setVideo(response.data);
@@ -34,7 +40,7 @@ export function Organizar() {
                         <div className="box-buttons">
                             <button onClick={handleInsert}>Inserir vídeos</button>
                             <button onClick={handleOrganizar}>Organizar</button>
-                            <button>Administrar Streams</button>
+                            <button onClick={handleAdmStreams}>Administrar Streams</button>
                         </div>
                     </div>
                     <div className="box-forms">

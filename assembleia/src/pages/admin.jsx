@@ -20,8 +20,17 @@ export function Admin() {
 
     const navigate = useNavigate();
 
+
+    function handleInsert() {
+        navigate('/admin/system')
+    }
+
     function handleOrganizar() {
         navigate('/admin/system/organizar')
+    }
+    
+    function handleAdmStreams() {
+        navigate('/admin/system/adm-streams')
     }
 
     
@@ -45,9 +54,9 @@ export function Admin() {
                             <p>Logout</p>
                         </div>
                         <div className="box-buttons">
-                            <button>Inserir vídeos</button>
+                            <button onClick={handleInsert}>Inserir vídeos</button>
                             <button onClick={handleOrganizar}>Organizar</button>
-                            <button>Administrar Streams</button>
+                            <button onClick={handleAdmStreams}>Administrar Streams</button>
                         </div>
                     </div>
                     <div className="box-forms">
