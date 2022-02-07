@@ -31,8 +31,7 @@ urlpatterns = [
     re_path('video_delete/(?P<pk>\d+)$', user_videos_views.delete_video),
     re_path(r'video_detail/(?P<pk>\d+)$', user_videos_views.video_detail),
     re_path('video_update/(?P<pk>\d+)$', user_videos_views.update_video),
-    re_path('admin/login/', views.login_user),
-    re_path('login/submit/',views.submit_login)
+    re_path('admin/login/submit/',views.submit_login)
 ]
 
 if settings.DEBUG:
