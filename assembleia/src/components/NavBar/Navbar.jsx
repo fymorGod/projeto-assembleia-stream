@@ -10,6 +10,9 @@ export function Navbar() {
                     <p>Assembleia Legislativa do <br /> Estado do Maranhão</p>
                 </div>
             </div>
+            <div>
+                <input type="search" name="" id="" placeholder='Pesquisar'/>
+            </div>
         </div>
     )
 }

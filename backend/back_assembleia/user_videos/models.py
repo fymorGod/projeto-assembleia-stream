@@ -6,8 +6,8 @@ class Video(models.Model):
     description = models.TextField(blank=True)
     video = models.FileField(upload_to='video/%y')
 
-    DESTAQUE_SIM = 'destaque_S'
-    DESTAQUE_NAO = 'destaque_n'
+    DESTAQUE_SIM = 'sim'
+    DESTAQUE_NAO = 'nao'
 
     destaque_choices = [
         (DESTAQUE_SIM, 'sim'),

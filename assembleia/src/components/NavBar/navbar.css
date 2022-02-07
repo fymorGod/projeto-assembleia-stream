@@ -6,6 +6,16 @@
     transition: all ease-in-out .3s;
     background-color: #004C7D;
 }
+
+.bar input{
+    width: 391px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    height: 20px;    
+    padding: 15px;
+}
+
 .logo{
     display: flex;
     justify-content: center;
