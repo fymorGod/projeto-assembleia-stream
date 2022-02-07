@@ -27,7 +27,7 @@ urlpatterns = [
     re_path('videos_get/', user_videos_views.videos_list),
     re_path('videos_post/', user_videos_views.save_video),
     re_path('video_delete/(?P<pk>\d+)$', user_videos_views.delete_video),
-    re_path(r'video_detail/(?P<pk>\d+)$', user_videos_views.video_detail),
+    re_path(r'git(?P<pk>\d+)$', user_videos_views.video_detail),
     re_path('video_update/(?P<pk>\d+)$', user_videos_views.update_video),
 ]
 
