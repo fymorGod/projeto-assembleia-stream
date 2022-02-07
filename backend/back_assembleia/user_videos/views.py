@@ -65,17 +65,21 @@ def video_detail(request, pk):
 
     try:        
         # video = Video.objects.get(pk=pk)
-        video = []
-        videos = Video.objects.all()          
-        serializer = VideoSerializer(videos, context={'request':request}, many=True)   
+        # video = []
+        # videos = Video.objects.all()          
+        # serializer = VideoSerializer(videos, context={'request':request}, many=True)   
+        # print(pk)
+
+        # for v in serializer.data:
+        #     print(v['pk'])
+
+        #     if(pk == v['pk']):                            
+        #         video = v
+        #         print('sim')
         print(pk)
-
-        for v in serializer.data:
-            print(v['pk'])
-
-            if(pk == v['pk']):                            
-                video = v
-                print('sim')
+        video = Video.objects.get(pk=pk)
+        print('Video: ', video)
+        print('Video type: ', type(video))
 
     except Video.DoesNotExist:        
         return Response(status=status.HTTP_404_NOT_FOUND)
