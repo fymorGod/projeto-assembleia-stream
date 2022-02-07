@@ -9,7 +9,6 @@
 }
 .box-content{
     width: 100%;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -113,8 +112,8 @@
 }
 @media screen and (min-width: 860px) {
     .man-content {
-      padding-right: 160px;
-      padding-left: 160px;
+      padding-right: 200px;
+      padding-left: 200px;
     }
     .box-content{
         justify-content: center;

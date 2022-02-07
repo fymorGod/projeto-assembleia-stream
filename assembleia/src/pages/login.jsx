@@ -1,9 +1,11 @@
 //import api from '../api/app';
 import '../styles/login.css';
 import { useEffect } from 'react';
-//import { useState } from 'react';
+import { useState } from 'react';
 
 export function Login() {
+    const [username, setUser] = useState('');
+    const [password, setPassword] = useState('');
     //const [] = useState()
     // useEffect(() => {
     //     api.get('/admin/login').then((response) => {
@@ -31,14 +33,14 @@ export function Login() {
 
                     <div className="input-box">
                         <label htmlFor="username">Usuário</label>
-                        <input type="text" id='username' name='username' />
+                        <input type="text" id='username' name='username'  onChange={e => setUser(e.target.value)}/>
                     </div>
 
                     <div className="input-box">
                         <label htmlFor="password">Senha</label>
-                        <input type="password" id='password' name='password' />
+                        <input type="password" id='password' name='password'  onChange={e => setPassword(e.target.value)}/>
                     </div>
-                    <button>Entrar</button>
+                    <button onClick={handleLogin}>Entrar</button>
                 </div>
             </div>
         </div>

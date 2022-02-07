@@ -2,10 +2,12 @@
 import '../styles/login.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { api } from '../api/app';
 
 export function Register() {
-    const [user, setUser] = useState('');
+    const [username, setUser] = useState('');
     const [password, setPassword] = useState('');
+
     //const [] = useState()
     // useEffect(() => {
     //     api.get('/admin/login').then((response) => {
@@ -14,13 +16,13 @@ export function Register() {
     // }, [])
 
     function handleCreateUser() {
-        /**
-         * Lógica de auth -> pegar os usuários do banco e verificar se o 
-         * username passado no input existe na base dados
-         * assim como se a base do usuario a senha 
-         * informada no input confere na base de dados
-         * do usuário
-         */
+        api.get('admin/login/submit/', {
+            username: username,
+            password: password
+        }).then(response => {
+            console.log(response.data);
+        });
+    
     }
 
     return (
@@ -40,7 +42,7 @@ export function Register() {
                         <label htmlFor="password">Senha</label>
                         <input type="password" id='password' name='password' onChange={e => setPassword(e.target.value)}/>
                     </div>
-                    <button>Registrar</button>
+                    <button onClick={handleCreateUser}>Registrar</button>
                 </div>
             </div>
         </div>

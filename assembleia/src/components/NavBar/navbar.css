@@ -7,6 +7,7 @@
     transition: all ease-in-out .3s;
     background-color: #004C7D;
     padding-right: 30px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .09);
 }
 
 .bar input{
@@ -17,6 +18,8 @@
     height: 20px;    
     padding: 15px;
     transition: all ease-in-out .3s;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+
 }
 
 .logo{
