@@ -37,6 +37,17 @@
     color: #f2f2f2;
     font-weight: 500;
 }
+.bar .btn-send-search{
+    width: 45px;
+    height: 30px;
+    color: #333;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    margin-left: -25px;
+    background-color: #f2f2f2;
+}
+
 @media screen and (max-width: 960px) {
     .bar{
         justify-content: space-between;

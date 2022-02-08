@@ -4,7 +4,8 @@ export function Model(props) {
 
     let modelStyle = {
         display: 'block',
-        backgroundColor: 'rgba(0,0,0,0.8)',
+        backgroundColor: '#f2f2f2',
+        padding: '10px',
     }
     
     return (
@@ -13,7 +14,7 @@ export function Model(props) {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">{props.title}</h5>
-                        <button type="button" className="btn-close" onClick={props.hide}></button>
+                        <button type="button" className="btn-close" onClick={props.hide}>Close</button>
                     </div>
                     <div className="modal-body">
                         <img src={props.img} className="img-fluid"/>

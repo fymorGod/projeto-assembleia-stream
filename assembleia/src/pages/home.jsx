@@ -29,7 +29,7 @@ export function Home() {
 
     const [model, setModel] = useState(false)
     const [tempData, setTempData] = useState([])
-    
+
     const getData = (img, title, desc) => {
         let tempData = [img, title, desc];
         setTempData(item => [1, ...tempData]);
@@ -47,37 +47,35 @@ export function Home() {
                 <div className="container-destaque">
                     <h2>Destaques</h2>
                 </div>
-                {/* <section className="py-4 py-lg-5 container">
-                <div className="row justify-content-center align-item-center">
-                    {
-                        videos.map((item, index) => {
-                            return (
-                                <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" key={index} >
-                                    <div class="card p-0 overflow-hidden h-100 shadow" style="width: 18rem;">
+                <section className="py-4 py-lg-5 container">
+                    <div className="row justify-content-flex-end align-item-center">
+                        {
+                            videos.map((item) => (
+                                <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" key={item.id} >
+                                    <div class="card p-0 overflow-hidden h-100 shadow">
                                         <img src={item.thumbnail} class="card-img-top" />
                                         <div class="card-body">
                                             <h5 class="card-title">{item.title}</h5>
                                             <button className="btn btn-primary" onClick={() => getData(item.thumbnail, item.title, item.link)}>Click me</button>
                                         </div>
                                     </div>
-                                </div>)
-                        })
-                    }
-                </div>
-            </section>
-            {
-                model === true ? <Model img={tempData[1]} title={tempData[2]} desc={tempData[3]} hide={() => setModel(false)} /> : ''
-            } */}
-
+                                </div>
+                            ))
+                        }
+                    </div>
+                </section>
+                {
+                    model === true ? <Model img={tempData[1]} title={tempData[2]} desc={tempData[3]} hide={() => setModel(false)} /> : ''
+                }
 
             </div>
             <div className="box-sessoes">
                 <div className="container-sessoes">
                     <h2>Sessões</h2>
                 </div>
-                {/* <section className="py-4 py-lg-5 container">
-                <div className="row justify-content-center align-item-center">
-                    {
+                <section className="py-4 py-lg-5 container">
+                    <div className="row justify-content-center align-item-center">
+                        {/* {
                         videos.map((item, index) => {
                             return (
                                 <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" key={index} >
@@ -90,10 +88,10 @@ export function Home() {
                                     </div>
                                 </div>)
                         })
-                    }
-                </div>
-            </section>
-            {
+                    } */}
+                    </div>
+                </section>
+                {/* {
                 model === true ? <Model img={tempData[1]} title={tempData[2]} desc={tempData[3]} hide={() => setModel(false)} /> : ''
             } */}
             </div>
