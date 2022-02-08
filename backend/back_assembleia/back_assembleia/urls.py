@@ -70,6 +70,9 @@ urlpatterns = [
     # USUÁRIO ------------------------------------------------------------------------
     # Login do Usuário
     re_path('login/', auntt_views.user_login),
+    
+    # Cadastro do Usuário
+    re_path('register/', auntt_views.create_user),
 ]
 
 if settings.DEBUG:

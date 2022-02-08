@@ -12,10 +12,10 @@ from .serializers import *
 
 @api_view(['POST'])
 def user_login(request):
-    print("CERTO")
     if request.method == 'POST':
         users = User.objects.all()
         serializer = UserSerializer(users, context={'request': request}, many=True)
+        print(serializer.data)
         return Response(serializer.data)
 
 
