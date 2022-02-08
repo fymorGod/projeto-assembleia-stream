@@ -46,9 +46,10 @@ export function Register() {
                     </div>
 
                     <div className="input-box">
-                        <label htmlFor="email">Senha</label>
+                        <label htmlFor="email">Email</label>
                         <input type="email" id='email' name='email' onChange={e => setEmail(e.target.value)}/>
                     </div>
+
                     <button onClick={handleCreateUser}>Registrar</button>
                 </div>
             </div>
