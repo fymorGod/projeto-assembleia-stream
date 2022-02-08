@@ -26,10 +26,13 @@ export function Home() {
     }
 
     const [model, setModel] = useState(false)
-    const [temData]
+    const [tempData, setTempData] = useState([])
+    
     const getData = (img, title, desc) => {
-        let tempData = [img, title, desc]
+        let tempData = [img, title, desc];
+        setTempData(item => [1, ...tempData]);
 
+        return setModel(true);
     }
     return (
         <div className="man-content">
