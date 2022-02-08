@@ -46,7 +46,7 @@ export function Home() {
                     <h2>Destaques</h2>
                 </div>
                 <div className="container-card">
-                    {
+                    {/* {
                         videos.map((item, index) => {
                             return (
                                 <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" key={index} >
@@ -59,7 +59,7 @@ export function Home() {
                                     </div>
                                 </div>)
                         })
-                    }
+                    } */}
                 </div>
             </div>
 
