@@ -1,5 +1,4 @@
 from tokenize import Token
-from click import password_option
 from django.db import models
 
 # Create your models here.
