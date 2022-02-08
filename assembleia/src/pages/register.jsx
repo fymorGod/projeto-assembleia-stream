@@ -16,7 +16,7 @@ export function Register() {
     // }, [])
 
     function handleCreateUser() {
-        api.get('admin/login/submit/', {
+        api.get('/register/', {
             username: username,
             password: password
         }).then(response => {
