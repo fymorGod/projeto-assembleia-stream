@@ -42,14 +42,19 @@ export function Home() {
                     videos.map(video => (
                         <div key={video.id} className="card" onClick={()=> {
                             setOpenModal(true);
-                        }}>
+                            if (openModal){
+                                console.log(video.id)
+                            }
+                            }
+                        }
+                        >
                             <div>
                                 <img src={video.thumbnail} alt="" />
                                 <div className="with-css">
                                     <p>{video.title} </p>
                                 </div>
                             </div>
-                            {openModal && <Modal closeModal={setOpenModal} id_videos={video.id}/>}
+                            
                         </div>
                     ))
                 }
