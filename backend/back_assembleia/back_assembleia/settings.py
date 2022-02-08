@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'search',
     'user_videos',
     'app_aunt',
-    'app_cronograma'
+    'app_cronograma',
+    'app_searchBar'
 ]
 
 MIDDLEWARE = [
@@ -138,4 +139,5 @@ MEDIA_ROOT= os.path.join(BASE_DIR,'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-YOUTUBE_DATA_API_KEY = 'AIzaSyCMqg3HztGD5QZGmtNV6eRt0WZ7rq7FxYs'
+# Chave de API 2
+YOUTUBE_DATA_API_KEY = 'AIzaSyDmtztzBLcbV0mJ-44tn7w_gF1F-qit4oY'

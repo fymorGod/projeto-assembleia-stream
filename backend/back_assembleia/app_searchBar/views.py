@@ -1,23 +1,15 @@
-''' 
-A função index faz a conexão com a API do youtube
-1. Faz um GET e seleciona o ID dos vídeos
-2. Utiliza o ID dos vídeos coletados e coleta mais dados de cada vídeo
-'''
-# pip install requests, isodate
 import requests
-from isodate import parse_duration
-
 from django.conf import settings
-from django.shortcuts import render
-from rest_framework.response import Response
+from isodate import parse_duration
+from urllib.request import Request
 from rest_framework.decorators import api_view
-from .serializers import Serializer
+from rest_framework.response import Response
 
-# Coleta os vídeos
-@api_view(['GET'])
-def index(request):
-    print('entrou aqui na fuc')
-    if request.method == 'GET':
+# Create your views here.
+@api_view(['POST'])
+def searchVideos(request):
+
+    if request.method == 'POST':
         # Links de busca
         search_url = 'https://www.googleapis.com/youtube/v3/search'
         video_url = 'https://www.googleapis.com/youtube/v3/videos'
@@ -76,5 +68,10 @@ def index(request):
 
             videos.append(video_data)    
 
-    return Response(videos)
-    # return render(request, 'search/index.html', context)
+    resultados_return = []
+    for video in videos:
+        if (request.data['search'] in video['title']):
+            resultados_return.append(video)
+    print(resultados_return)
+
+    return Response(resultados_return)
