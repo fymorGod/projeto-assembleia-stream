@@ -57,7 +57,7 @@ export function Home() {
                                         <img src={item.thumbnail} class="card-img-top" />
                                         <div class="card-body">
                                             <h5 class="card-title">{item.title}</h5>
-                                            <button className="btn btn-primary" onClick={() => getData()}>Click me</button>
+                                            <button className="btn btn-primary" onClick={() => getData(item.thumbnail, item.title, item.link)}>Click me</button>
                                         </div>
                                     </div>
                                 </div>)
@@ -66,7 +66,7 @@ export function Home() {
                 </div>
             </section>
             {
-                model === true ? <Model img={tempData[1]} title={tempData[2]} desc={tempData[3]}/> : ''
+                model === true ? <Model img={tempData[1]} title={tempData[2]} desc={tempData[3]} hide={() => setModel(false)} /> : ''
             }
 
 
@@ -75,21 +75,27 @@ export function Home() {
                 <div className="container-sessoes">
                     <h2>Sessões</h2>
                 </div>
-                <div className="container-card">
-
+                <section className="py-4 py-lg-5 container">
+                <div className="row justify-content-center align-item-center">
                     {
-                        videos.map(video => (
-                            <div key={video.id} className="card">
-                                <div>
-                                    <img src={video.thumbnail} alt="" />
-                                    <div className="with-css">
-                                        <p>{video.title} </p>
+                        videos.map((item, index) => {
+                            return (
+                                <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" key={index} >
+                                    <div class="card p-0 overflow-hidden h-100 shadow" style="width: 18rem;">
+                                        <img src={item.thumbnail} class="card-img-top" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">{item.title}</h5>
+                                            <button className="btn btn-primary" onClick={() => getData(item.thumbnail, item.title, item.link)}>Click me</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        ))
+                                </div>)
+                        })
                     }
                 </div>
+            </section>
+            {
+                model === true ? <Model img={tempData[1]} title={tempData[2]} desc={tempData[3]} hide={() => setModel(false)} /> : ''
+            }
             </div>
         </div>
     )
