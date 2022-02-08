@@ -17,7 +17,7 @@ export function Login() {
     const navigate = useNavigate();
 
     function handleLogin() {
-        api.post('/login', {
+        api.post('/login/', {
             username: username,
             password: password
         }).then(response => {
