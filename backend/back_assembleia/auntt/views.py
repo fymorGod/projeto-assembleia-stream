@@ -24,10 +24,12 @@ def user_login(request):
 def create_user(request):
     if request.method == 'POST':
         serializer = UserSerializer(data = request.data)
+        serializer.is_valid()
+        print(serializer.errors)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.erros, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
