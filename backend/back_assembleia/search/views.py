@@ -14,10 +14,9 @@ from rest_framework.decorators import api_view
 from .serializers import Serializer
 
 # Coleta os vídeos
-@api_view(['GET', 'POST'])
+@api_view(['GET'])
 def index(request):
-
-    if request.method == 'GET' or 'POST':
+    if request.method == 'GET':
         # Links de busca
         search_url = 'https://www.googleapis.com/youtube/v3/search'
         video_url = 'https://www.googleapis.com/youtube/v3/videos'
