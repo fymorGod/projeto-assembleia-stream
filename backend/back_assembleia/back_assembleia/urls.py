@@ -18,6 +18,7 @@ from user_videos.views import *
 from search import views as search_views
 from user_videos import views as user_videos_views
 from app_cronograma import views as cronograma_videos_views
+from app_searchBar import views as searchBar_views
 from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls.static import static
@@ -63,6 +64,8 @@ urlpatterns = [
     # Atualizar um item do Cronograma
     re_path(r'cronograma_update/(?P<pk>\d+)$', cronograma_videos_views.update_cronograma),
 
+    # SearchBar
+    re_path('searchBar/', searchBar_views.searchVideos),
 
     # USUÁRIO ------------------------------------------------------------------------
     # Login do Usuário
