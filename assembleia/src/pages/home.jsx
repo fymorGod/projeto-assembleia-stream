@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { api } from '../api/app';
 import { Cronograma } from "../components/Cronograma/Cronograma";
-import { Modal } from "../components/Modal/Modal";
 import { Navbar } from "../components/NavBar/Navbar";
 import { PlayerVideo } from "../components/PlayerVideo/PlayerVideo";
 import '../styles/home.css';
 
 export function Home() {
     const [videos, setVideo] = useState([])
-    const [openModal, setOpenModal] = useState(false);
+
 
     useEffect(() => {
         api.get('/search/').then(response => {
@@ -20,12 +19,18 @@ export function Home() {
     const elements = document.querySelectorAll('.with-js p')
     const LIMIT = 15
 
-    for (let p of elements){
+    for (let p of elements) {
         const aboveLimit = p.innerText.lenght > LIMIT
         const dotsOrEmpty = aboveLimit ? '...' : ''
         p.innerText = p.innerText.substring(0, LIMIT) + dotsOrEmpty
     }
 
+    const [model, setModel] = useState(false)
+    const [temData]
+    const getData = (img, title, desc) => {
+        let tempData = [img, title, desc]
+
+    }
     return (
         <div className="man-content">
             <Navbar />
@@ -37,29 +42,22 @@ export function Home() {
                 <div className="container-destaque">
                     <h2>Destaques</h2>
                 </div>
-                <div className="container-card" >
-                {
-                    videos.map(video => (
-                        <div key={video.id} className="card" onClick={()=> {
-                            setOpenModal(true);
-                            if (openModal){
-                                console.log(video.id)
-                            }
-                            }
-                        }
-                        >
-                            <div>
-                                <img src={video.thumbnail} alt="" />
-                                <div className="with-css">
-                                    <p>{video.title} </p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    ))
-                }
-                
-                </div>                
+                <div className="container-card">
+                    {
+                        videos.map((item, index) => {
+                            return (
+                                <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" key={index} >
+                                    <div class="card p-0 overflow-hidden h-100 shadow" style="width: 18rem;">
+                                        <img src={item.thumbnail} class="card-img-top"/>
+                                        <div class="card-body">
+                                            <h5 class="card-title">{item.title}</h5>
+                                            <button className="btn btn-primary" onClick={() => getData()}>Click me</button>
+                                        </div>
+                                    </div>
+                                </div>)
+                        })
+                    }
+                </div>
             </div>
 
             <div className="box-sessoes">
@@ -68,18 +66,18 @@ export function Home() {
                 </div>
                 <div className="container-card">
 
-                {
-                    videos.map(video => (
-                        <div key={video.id} className="card">
-                            <div>
-                                <img src={video.thumbnail} alt="" />
-                                <div className="with-css">
-                                    <p>{video.title} </p>
+                    {
+                        videos.map(video => (
+                            <div key={video.id} className="card">
+                                <div>
+                                    <img src={video.thumbnail} alt="" />
+                                    <div className="with-css">
+                                        <p>{video.title} </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))
-                }
+                        ))
+                    }
                 </div>
             </div>
         </div>
