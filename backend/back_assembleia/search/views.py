@@ -14,10 +14,10 @@ from rest_framework.decorators import api_view
 from .serializers import Serializer
 
 # Coleta os vídeos
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def index(request):
 
-    if request.method == 'GET':
+    if request.method == 'GET' or 'POST':
         # Links de busca
         search_url = 'https://www.googleapis.com/youtube/v3/search'
         video_url = 'https://www.googleapis.com/youtube/v3/videos'
@@ -26,7 +26,7 @@ def index(request):
         search_params = {
             'part':'snippet',
             # 'q':'learn python',
-            'maxResults': 5,
+            'maxResults': 8,
             'channelId':'UCQTEYscjlvwG_1j0a0Wky0w',
             'order':'date',
             'key': settings.YOUTUBE_DATA_API_KEY,
@@ -51,7 +51,7 @@ def index(request):
             'key': settings.YOUTUBE_DATA_API_KEY,
             'part':'snippet, contentDetails',
             'id':','.join(video_ids),
-            'maxResults': 5
+            'maxResults': 8
         }
 
         # Faz a request com base na url de busca e usa os parâmetros de busca
