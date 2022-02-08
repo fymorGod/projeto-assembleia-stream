@@ -10,12 +10,14 @@ from .serializers import *
 # Create your views here.
 
 
-@api_view(['GET'])
-def user_list(request):
-    if request.method == 'GET':
+@api_view(['POST'])
+def user_login(request):
+    print("CERTO")
+    if request.method == 'POST':
         users = User.objects.all()
         serializer = UserSerializer(users, context={'request': request}, many=True)
         return Response(serializer.data)
+
 
 
 @api_view(['POST'])
