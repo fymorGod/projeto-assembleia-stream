@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'search',
     'user_videos',
     'app_aunt',
-    'app_cronograma'
+    'app_cronograma',
+    'app_searchBar'
 ]
 
 MIDDLEWARE = [
