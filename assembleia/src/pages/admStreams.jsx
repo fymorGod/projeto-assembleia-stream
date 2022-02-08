@@ -30,7 +30,7 @@ export function AdmStreams() {
 
     const handleCreatedVideo = async e => {
         e.preventDefault();
-        await api.post('/videos_post/', uploadData).then(response => {
+        await api.post('//', uploadData).then(response => {
             console.log(response.data);
         })
     }
