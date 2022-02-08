@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'search',
     'user_videos',
-    'app_aunt',
-    'app_cronograma'
+    'app_cronograma',
+    'auntt'
+    
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,4 @@ MEDIA_ROOT= os.path.join(BASE_DIR,'media/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 YOUTUBE_DATA_API_KEY = 'AIzaSyCMqg3HztGD5QZGmtNV6eRt0WZ7rq7FxYs'
+

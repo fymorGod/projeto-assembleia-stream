@@ -22,7 +22,7 @@ from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls.static import static
 from django.conf import settings
-from app_aunt import views
+from auntt import views as auntt_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -66,7 +66,7 @@ urlpatterns = [
 
     # USUÁRIO ------------------------------------------------------------------------
     # Login do Usuário
-    re_path('admin/login/submit/',views.submit_login)
+    re_path('admin/login', auntt_views.user_list),
 ]
 
 if settings.DEBUG:
