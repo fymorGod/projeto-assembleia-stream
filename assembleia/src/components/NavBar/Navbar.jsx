@@ -7,7 +7,7 @@ export function Navbar() {
     const [search, setSearch] = useState('')
 
     function handleSearch(){
-        api.get('/searchBar/',{
+        api.post('/searchBar/',{
             search: search
         }).then(response => {
             console.log(response.data)
