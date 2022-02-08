@@ -72,6 +72,5 @@ def searchVideos(request):
     for video in videos:
         if ((request.data['search']).lower() in (video['title']).lower()):
             resultados_return.append(video)
-    print(resultados_return)
 
     return Response(resultados_return)
