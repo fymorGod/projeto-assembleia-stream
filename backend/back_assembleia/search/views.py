@@ -16,6 +16,7 @@ from .serializers import Serializer
 # Coleta os vídeos
 @api_view(['GET'])
 def index(request):
+    print('entrou aqui na fuc')
     if request.method == 'GET':
         # Links de busca
         search_url = 'https://www.googleapis.com/youtube/v3/search'
