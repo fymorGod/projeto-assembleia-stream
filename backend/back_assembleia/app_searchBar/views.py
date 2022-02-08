@@ -1,8 +1,10 @@
+from queue import Empty
 import requests
 from django.conf import settings
 from isodate import parse_duration
 from urllib.request import Request
 from rest_framework.decorators import api_view
+from rest_framework import status
 from rest_framework.response import Response
 
 # Create your views here.
@@ -67,10 +69,12 @@ def searchVideos(request):
             }
 
             videos.append(video_data)    
-
     resultados_return = []
     for video in videos:
         if ((request.data['search']).lower() in (video['title']).lower()):
             resultados_return.append(video)
 
-    return Response(resultados_return)
+    if(not resultados_return):
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    else:
+        return Response(resultados_return, status=status.HTTP_200_OK) 
