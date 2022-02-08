@@ -42,9 +42,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'search',
     'user_videos',
-    'app_aunt',
     'app_cronograma',
     'app_searchBar'
+    'auntt'
+    
 ]
 
 MIDDLEWARE = [
