@@ -43,15 +43,14 @@ export function Organizar() {
                             <button onClick={handleAdmStreams}>Administrar Streams</button>
                         </div>
                     </div>
-                    <div className="box-forms">
-                        <h2>Organização dos vídeos</h2>
+                    <div className="box-organizar-cards">
                         <div className="box-cards">
                             {
                                 videos.map(video => (
                                     <div className='card'>
                                         <img src={video.thumbnail} alt={video.title} />
                                         <p>{video.title}</p>
-                                        <input type="checkbox" value='sim' checked/>
+                                        <input type="radio" value='sim'/>
                                     </div>
                                 ))
                             }

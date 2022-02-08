@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import { api } from '../../api/app';
 import logo from '../../assets/logo-assembleia.png';
 import './navbar.css';
@@ -24,7 +24,7 @@ export function Navbar() {
             </div>
             <div>
                 <input type="search" name="" id="" placeholder='Pesquisar' onChange={e => setSearch(e.target.value)}/>
-                <button onClick={handleSearch}>Enviar</button>
+                <button onClick={handleSearch} className='btn-send-search'>Enviar</button>
             </div>
         </div>
     )

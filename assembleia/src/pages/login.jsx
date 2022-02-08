@@ -1,9 +1,8 @@
 //import api from '../api/app';
 import '../styles/login.css';
-import { useEffect } from 'react';
 import { useState } from 'react';
 import { api } from '../api/app';
-
+import { useNavigate } from 'react-router';
 export function Login() {
     const [username, setUser] = useState('');
     const [password, setPassword] = useState('');
@@ -14,13 +13,15 @@ export function Login() {
     //         console.log(response.data);
     //     })
     // }, [])
+    
+    const navigate = useNavigate();
 
     function handleLogin() {
-        api.get('/admin/login/submit/', {
+        api.get('/login/', {
             username: username,
             password: password
         }).then(response => {
-            console.log(response.data);
+            navigate('/admin/system')
         })
     }
 

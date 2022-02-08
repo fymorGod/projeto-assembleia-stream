@@ -43,8 +43,13 @@ INSTALLED_APPS = [
     'search',
     'user_videos',
     'app_cronograma',
+<<<<<<< HEAD
     'auntt',
     
+=======
+    'app_searchBar',
+    'auntt'
+>>>>>>> 70214938fe08003cec558e706d93aaf8777e477f
 ]
 
 MIDDLEWARE = [
@@ -139,5 +144,5 @@ MEDIA_ROOT= os.path.join(BASE_DIR,'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-YOUTUBE_DATA_API_KEY = 'AIzaSyCMqg3HztGD5QZGmtNV6eRt0WZ7rq7FxYs'
-
+# Assembleia project 2
+YOUTUBE_DATA_API_KEY = 'AIzaSyA40kS7f6QjKmGH14CNW6_42sIhKG7m-rg'

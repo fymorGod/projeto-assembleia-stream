@@ -5,7 +5,6 @@ import { Admin } from "./pages/admin";
 import { Register } from "./pages/register";
 import { Organizar } from "./pages/organizar";
 import { AdmStreams } from "./pages/admStreams";
-
 function App() {
   return (
     <BrowserRouter>
