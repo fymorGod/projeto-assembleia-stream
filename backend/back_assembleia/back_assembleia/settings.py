@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'user_videos',
     'app_cronograma',
     'app_searchBar'
+    'auntt'
+    
 ]
 
 MIDDLEWARE = [
