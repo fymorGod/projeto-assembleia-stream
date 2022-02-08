@@ -6,6 +6,7 @@ import { api } from '../api/app';
 
 export function Register() {
     const [username, setUser] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     //const [] = useState()
@@ -18,7 +19,8 @@ export function Register() {
     function handleCreateUser() {
         api.post('/register/', {
             username: username,
-            password: password
+            password: password,
+            email: email,
         }).then(response => {
             console.log(response.data);
         });
@@ -42,6 +44,12 @@ export function Register() {
                         <label htmlFor="password">Senha</label>
                         <input type="password" id='password' name='password' onChange={e => setPassword(e.target.value)}/>
                     </div>
+
+                    <div className="input-box">
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id='email' name='email' onChange={e => setEmail(e.target.value)}/>
+                    </div>
+
                     <button onClick={handleCreateUser}>Registrar</button>
                 </div>
             </div>
