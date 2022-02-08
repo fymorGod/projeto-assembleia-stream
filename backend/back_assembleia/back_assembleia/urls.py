@@ -26,17 +26,46 @@ from app_aunt import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # Lista dos Videos Youtube
     re_path('search/', search_views.index),
-    re_path('videos_get/', user_videos_views.videos_list),
+
+    # VÍDEOS MP4 ----------------------------------------------------------------------
+    # Lista dos Vídeos MP4
+    re_path('videos_get/', user_videos_views.videos_list),    
+
+    # Salva o Vídeo MP4
     re_path('videos_post/', user_videos_views.save_video),
+
+    # Deleta o Vídeo MP4
     re_path('video_delete/(?P<pk>\d+)$', user_videos_views.delete_video),
+
+    # Retorna um Vídeo MP4 pela pk
     re_path(r'video_detail/(?P<pk>\d+)$', user_videos_views.video_detail),
+
+    # Atualiza o Vídeo MP4
     re_path(r'video_update/(?P<pk>\d+)$', user_videos_views.update_video),
+
+
+    # CRONOGRAMA ----------------------------------------------------------------------
+    # Lista o Cronograma
     re_path('cronograma_get/', cronograma_videos_views.cronogramas_list),
+
+    # Cria o Cronograma
     re_path('cronograma_post/', cronograma_videos_views.create_cronograma),
+
+    # Retorna um item do Cronograma
     re_path(r'cronograma_detail/(?P<pk>\d+)$', cronograma_videos_views.cronograma_detail),
+
+    # Deleta um item do Cronograma
     re_path(r'cronograma_delete/(?P<pk>\d+)$', cronograma_videos_views.delete_cronograma),
+
+    # Atualizar um item do Cronograma
     re_path(r'cronograma_update/(?P<pk>\d+)$', cronograma_videos_views.update_cronograma),
+
+
+    # USUÁRIO ------------------------------------------------------------------------
+    # Login do Usuário
     re_path('admin/login/submit/',views.submit_login)
 ]
 
