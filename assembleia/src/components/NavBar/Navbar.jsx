@@ -5,15 +5,14 @@ import './navbar.css';
 
 export function Navbar() {
     const [search, setSearch] = useState('')
-    const [send, setSend] = useState(false)
-    useEffect(() => {
+
+    function handleSearch(){
         api.get('/searchBar/',{
             search: search
         }).then(response => {
             console.log(response.data)
         })
-    }, [send])
-
+    }
 
     return (
         <div className="bar">
@@ -25,7 +24,7 @@ export function Navbar() {
             </div>
             <div>
                 <input type="search" name="" id="" placeholder='Pesquisar' onChange={e => setSearch(e.target.value)}/>
-                <button onClick={setSend}>Enviar</button>
+                <button onClick={handleSearch}>Enviar</button>
             </div>
         </div>
     )
