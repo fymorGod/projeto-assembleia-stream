@@ -23,7 +23,6 @@ from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls.static import static
 from django.conf import settings
-from app_aunt import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -69,7 +68,6 @@ urlpatterns = [
 
     # USUÁRIO ------------------------------------------------------------------------
     # Login do Usuário
-    re_path('admin/login/submit/',views.submit_login)
 ]
 
 if settings.DEBUG:
