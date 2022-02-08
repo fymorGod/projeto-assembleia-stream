@@ -47,7 +47,7 @@ export function Home() {
                 <div className="container-destaque">
                     <h2>Destaques</h2>
                 </div>
-                <section className="py-4 py-lg-5 container">
+                {/* <section className="py-4 py-lg-5 container">
                 <div className="row justify-content-center align-item-center">
                     {
                         videos.map((item, index) => {
@@ -67,7 +67,7 @@ export function Home() {
             </section>
             {
                 model === true ? <Model img={tempData[1]} title={tempData[2]} desc={tempData[3]} hide={() => setModel(false)} /> : ''
-            }
+            } */}
 
 
             </div>
@@ -75,7 +75,7 @@ export function Home() {
                 <div className="container-sessoes">
                     <h2>Sessões</h2>
                 </div>
-                <section className="py-4 py-lg-5 container">
+                {/* <section className="py-4 py-lg-5 container">
                 <div className="row justify-content-center align-item-center">
                     {
                         videos.map((item, index) => {
@@ -95,7 +95,7 @@ export function Home() {
             </section>
             {
                 model === true ? <Model img={tempData[1]} title={tempData[2]} desc={tempData[3]} hide={() => setModel(false)} /> : ''
-            }
+            } */}
             </div>
         </div>
     )
