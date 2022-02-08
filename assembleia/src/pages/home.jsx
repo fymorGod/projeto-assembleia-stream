@@ -3,6 +3,8 @@ import { api } from '../api/app';
 import { Cronograma } from "../components/Cronograma/Cronograma";
 import { Navbar } from "../components/NavBar/Navbar";
 import { PlayerVideo } from "../components/PlayerVideo/PlayerVideo";
+import { Model } from "./Model";
+
 import '../styles/home.css';
 
 export function Home() {
@@ -45,13 +47,14 @@ export function Home() {
                 <div className="container-destaque">
                     <h2>Destaques</h2>
                 </div>
-                <div className="container-card">
-                    {/* {
+                <section className="py-4 py-lg-5 container">
+                <div className="row justify-content-center align-item-center">
+                    {
                         videos.map((item, index) => {
                             return (
                                 <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" key={index} >
                                     <div class="card p-0 overflow-hidden h-100 shadow" style="width: 18rem;">
-                                        <img src={item.thumbnail} class="card-img-top"/>
+                                        <img src={item.thumbnail} class="card-img-top" />
                                         <div class="card-body">
                                             <h5 class="card-title">{item.title}</h5>
                                             <button className="btn btn-primary" onClick={() => getData()}>Click me</button>
@@ -59,10 +62,15 @@ export function Home() {
                                     </div>
                                 </div>)
                         })
-                    } */}
+                    }
                 </div>
-            </div>
+            </section>
+            {
+                model === true ? <Model img={tempData[1]} title={tempData[2]} desc={tempData[3]}/> : ''
+            }
 
+
+            </div>
             <div className="box-sessoes">
                 <div className="container-sessoes">
                     <h2>Sessões</h2>
