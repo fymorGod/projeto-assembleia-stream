@@ -139,5 +139,5 @@ MEDIA_ROOT= os.path.join(BASE_DIR,'media/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Chave de API 2
-YOUTUBE_DATA_API_KEY = 'AIzaSyDmtztzBLcbV0mJ-44tn7w_gF1F-qit4oY'
+# Assembleia project 2
+YOUTUBE_DATA_API_KEY = 'AIzaSyA40kS7f6QjKmGH14CNW6_42sIhKG7m-rg'
