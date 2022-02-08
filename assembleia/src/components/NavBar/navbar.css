@@ -46,6 +46,7 @@
     border: none;
     margin-left: -25px;
     background-color: #f2f2f2;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 960px) {
