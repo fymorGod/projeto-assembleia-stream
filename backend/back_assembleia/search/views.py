@@ -76,7 +76,6 @@ def index(request):
                 'link': f'https://www.youtube.com/watch?v={ result["id"] }'
             }
 
-            videos_youtube.append(video_data)
             videos.append(video_data)        
 
     return Response(videos)
@@ -84,7 +83,9 @@ def index(request):
 @api_view(['POST'])
 def save_videos_Youtube(request):
     if request.method == 'POST':
-        print(videos_youtube)
+        print(request.data)
+        
+
     return Response(status=status.HTTP_201_CREATED)
 
 def get_videos_Youtube_selecionados(request):
