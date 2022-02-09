@@ -28,6 +28,7 @@ def videos_list(request):
 @api_view(['POST'])
 def save_video(request):
     if request.method == 'POST': 
+        print(request.data)
         serializer = VideoSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

@@ -7,7 +7,6 @@ A função index faz a conexão com a API do youtube
 import requests
 from isodate import parse_duration
 from django.conf import settings
-from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -85,19 +84,13 @@ def select_videos_Youtube(request):
     videos = []
 
     if request.method == 'POST':
-        new_dict = {}
-        for item in request.data:
-            id_video = item.pop('id_video')
-            new_dict['dados'] = id_video
-            print(new_dict)
 
-
-        serializer = SearchSerializer(data=request.data)
-        serializer.is_valid()
-        print(serializer.errors)
+        serializer = SearchSerializer(data=request.data, many=True)
         if serializer.is_valid():
             print(serializer.data)
-        return Response(status=status.HTTP_201_CREATED)
+            return Response(status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
         
 
     # if request.method == 'POST':
