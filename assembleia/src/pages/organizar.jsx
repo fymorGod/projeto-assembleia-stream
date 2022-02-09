@@ -14,7 +14,7 @@ export function Organizar() {
 
     const handleSave = async e => {
         e.preventDefault();
-        await api.post('/search_save/', lista).then(response => {
+        await api.post('/select_videos_Youtube/', lista).then(response => {
             console.log(response.data);
         })
     }
