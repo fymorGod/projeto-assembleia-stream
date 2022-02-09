@@ -1,14 +1,8 @@
-from multiprocessing import context
-from django.forms import PasswordInput
-from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .authentication import authBackend
 from .models import User 
 from .serializers import *
-from django_token.models import Token
 # Create your views here.
 
 
@@ -22,8 +16,7 @@ def user_login(request):
         for user in serializer.data:
             if username == user['username'] and password == user['password']:
                 return Response(status=status.HTTP_200_OK)
-            else:
-                return Response(status=status.HTTP_404_NOT_FOUND)
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
 
 
