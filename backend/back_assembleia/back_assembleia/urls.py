@@ -28,8 +28,15 @@ from auntt import views as auntt_views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # Lista dos Videos Youtube
+    # YOUTUBE ----------------------------------------------------------------------
+    # Retorna os vídeos do Youtube
     re_path('search/', search_views.index),
+
+    # Salva(POST) e Retorna(GET) os vídeos do Youtube selecionados
+    re_path('select_videos_Youtube/', search_views.select_videos_Youtube),
+
+    # Retorna os vídeos do Youtube selecionados
+    re_path('search_get_videos_Yt/', search_views.get_videos_Youtube_selecionados),
 
     # VÍDEOS MP4 ----------------------------------------------------------------------
     # Lista dos Vídeos MP4
