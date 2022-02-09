@@ -80,7 +80,6 @@ def index(request):
 
 @api_view(['GET','POST'])
 def select_videos_Youtube(request):
-
     # Cria a lista de vídeos
     videos = []
 
@@ -122,8 +121,3 @@ def select_videos_Youtube(request):
             return Response(status=status.HTTP_404_NOT_FOUND)
         else:
             return Response(videos, status=status.HTTP_200_OK)
-
-
-def get_videos_Youtube_selecionados(request):
-
-    return Response(videos_youtube)
