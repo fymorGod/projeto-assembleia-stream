@@ -19,7 +19,6 @@ def user_login(request):
         serializer = UserSerializer(users, context={'request': request}, many=True)
         username = request.data['username']
         password = request.data['password']
-        token = Token.objects.get_or_create(user=user)
         for user in serializer.data:
             if username == user['username'] and password == user['password']:
                 return Response(status=status.HTTP_200_OK)
