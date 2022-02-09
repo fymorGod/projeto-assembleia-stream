@@ -51,6 +51,7 @@ export function Organizar() {
                                         <img src={video.thumbnail} alt={video.title} />
                                         <p>{video.title}</p>
                                         <input type="radio" value='sim'/>
+                                        <input type="radio" value='nao'/>
                                     </div>
                                 ))
                             }
