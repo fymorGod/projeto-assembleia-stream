@@ -12,7 +12,6 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-from .serializers import Serializer
 
 videos_youtube = []
 
@@ -84,7 +83,7 @@ def index(request):
 def save_videos_Youtube(request):
     if request.method == 'POST':
         print(request.data)
-        
+
 
     return Response(status=status.HTTP_201_CREATED)
 
