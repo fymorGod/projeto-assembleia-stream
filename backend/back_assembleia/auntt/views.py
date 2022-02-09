@@ -14,6 +14,7 @@ def user_login(request):
         serializer = UserSerializer(users, context={'request': request}, many=True)
         username = request.data['username']
         password = request.data['password']
+        # print(serializer.data)
         for user in serializer.data:
             if username == user['username'] and password == user['password']:
                 token = secrets.token_hex(nbytes=30)

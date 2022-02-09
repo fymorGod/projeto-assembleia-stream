@@ -21,8 +21,9 @@ export function Login() {
             username: username,
             password: password
         }).then(response => {
-            if(response.data)
-            navigate('/admin/system')
+           if (response.data){
+               navigate('/admin/system')
+           }
         })
     }
 
