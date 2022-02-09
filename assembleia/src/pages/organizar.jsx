@@ -50,8 +50,7 @@ export function Organizar() {
                                     <div className='card'>
                                         <img src={video.thumbnail} alt={video.title} />
                                         <p>{video.title}</p>
-                                        <input type="radio" value='sim'/>
-                                        <input type="radio" value='nao'/>
+                                        <input type="checkbox" value='sim'/>
                                     </div>
                                 ))
                             }

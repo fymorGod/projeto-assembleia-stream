@@ -79,13 +79,35 @@
 }
 .box-organizar-cards{
     width: 800px;
-    height: 600px;
+    height: 800px;
     display: flex;
-    justify-content: center;
-    background: #e7e7e7;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: #f2f2f2;
     margin-left: 20px;
     border-radius: 3px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+}
+
+.box-cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+}
+.box-cards form input[type='checkbox']{
+
+}
+.card{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.card img{
+    width: 80px;
+    height: 80px;
 }
 .box-forms form{
     border-left: 1px solid rgb(30, 56, 172);
@@ -163,18 +185,4 @@
     color: #fff;
     font-size: .8rem;
     font-weight: 400;
-}
-.box-cards{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #f2f2f2;
-}
-.card{
-    width: 100%;
-}
-.card img{
-    width: 80px;
-    height: 80px;
 }
