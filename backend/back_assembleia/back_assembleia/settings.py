@@ -59,12 +59,6 @@ MIDDLEWARE = [
     'django_token.middleware.TokenMiddleware',
 ]
 
-AUTHENTICATION_BACKENDS = [
-    'events.authentication.authBackend',
-    'django.contrib.auth.backends.ModelBackend',
-    'django_token.backends.TokenBackend',
-]
-
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = [
