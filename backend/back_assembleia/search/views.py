@@ -85,7 +85,13 @@ def select_videos_Youtube(request):
     videos = []
 
     if request.method == 'POST':
-        print(request.data)
+        new_dict = {}
+        for item in request.data:
+            id_video = item.pop('id_video')
+            new_dict['dados'] = id_video
+            print(new_dict)
+
+
         serializer = SearchSerializer(data=request.data)
         serializer.is_valid()
         print(serializer.errors)
