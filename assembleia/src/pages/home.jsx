@@ -13,7 +13,7 @@ export function Home() {
 
 
     useEffect(() => {
-        api.get('/search/').then(response => {
+        api.get('/search_get_videos_Yt/').then(response => {
             console.log(response.data[0].title);
             setVideo(response.data);
         })
