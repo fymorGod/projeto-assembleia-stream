@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import User 
 from .serializers import *
+import secrets
 # Create your views here.
 
 
@@ -15,7 +16,8 @@ def user_login(request):
         password = request.data['password']
         for user in serializer.data:
             if username == user['username'] and password == user['password']:
-                return Response(status=status.HTTP_200_OK)
+                token = secrets.token_hex(nbytes=30)
+                return Response(token, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_404_NOT_FOUND)
 
 
