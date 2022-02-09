@@ -8,14 +8,13 @@ export function Organizar() {
 
     const navigate = useNavigate();
 
-    const [dados, setDados] = useState('');
-
-    const uploadData = new FormData();
-    uploadData.append('id', dados);
+    //const [dados, setDados] = useState('');
+    
+    const lista = []
 
     const handleSave = async e => {
         e.preventDefault();
-        await api.post('/search_save/', uploadData).then(response => {
+        await api.post('/search_save/', lista).then(response => {
             console.log(response.data);
         })
     }
@@ -64,7 +63,7 @@ export function Organizar() {
                                     <div className='card'>
                                         <img src={video.thumbnail} alt={video.title} />
                                         <p>{video.title}</p>
-                                        <input type="checkbox" value='sim' onChange={() => setDados(video.id)}/>
+                                        <input type="checkbox" value='sim' onChange={() => lista.push(video.id)}/>
                                     </div>
                                 ))
                             }
