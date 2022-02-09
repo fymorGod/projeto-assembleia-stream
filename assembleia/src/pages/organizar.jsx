@@ -8,6 +8,19 @@ export function Organizar() {
 
     const navigate = useNavigate();
 
+    const [dados, setDados] = useState('');
+
+    const uploadData = new FormData();
+    uploadData.append('id', dados);
+
+    const handleSave = async e => {
+        e.preventDefault();
+        await api.post('/videos_post/', uploadData).then(response => {
+            console.log(response.data);
+        })
+    }
+
+
     function handleInsert() {
         navigate('/admin/system')
     }
@@ -45,15 +58,18 @@ export function Organizar() {
                     </div>
                     <div className="box-organizar-cards">
                         <div className="box-cards">
+                            <form onSubmit={handleSave}>
                             {
                                 videos.map(video => (
                                     <div className='card'>
                                         <img src={video.thumbnail} alt={video.title} />
                                         <p>{video.title}</p>
-                                        <input type="checkbox" value='sim'/>
+                                        <input type="checkbox" value='sim' onChange={() => setDados(video.id)}/>
                                     </div>
                                 ))
                             }
+                            <button type='submit'>Salvar</button>
+                            </form>
                         </div>
                     </div>
                 </div>
