@@ -5,6 +5,7 @@
     flex-direction: column;
     padding-right: 240px;
     padding-left: 240px;
+    scroll-behavior: smooth;
     transition: all ease-in-out .3s;
 }
 .box-content{
@@ -18,66 +19,81 @@
     width: 100%;
 }
 .container-destaque{
-    margin: 0 auto;
+    margin-top: 20px;
     width: 100%;
     padding: 10px 20px;
     border-radius: 4px;
+    background-color: #0fb30f;
 }
 .container-destaque h2{
     font-size: 1.4em;
-    color:#184868;
+    color:#f2f2f2;
     font-weight: 500;
     text-align: center;
 }
-.container-destaque h2::after{
+/* .container-destaque h2::after{
     content: '';
     width: 150px;
     margin: 0 auto;
     height: 2px;
     display: block;
-    background-color: #c01414;
-}
+    background-color: #333;
+} */
 
 .box-sessoes{
     margin-top: 15px;
     width: 100%;
 }
 .container-sessoes{
-    margin-top: -20px;
+    margin-top: 20px;
     width: 100%;
+    background-color: #c24f1a;
     padding: 10px 20px;
     border-radius: 4px;
 }
 .container-sessoes h2{
     text-align: center;
     font-size: 1.2em;
-    color:#184868;
+    color:#f2f2f2;
     font-weight: 500;
 }
-.container-sessoes h2::after{
+/* .container-sessoes h2::after{
     content: '';
     width: 150px;
     margin: 0 auto;
     height: 2px;
     display: block;
-    background-color: #c01414;
+    background-color: #333;
+} */
+.section-one{
+    padding: 20px 10px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
 }
-.card{
+.box-card{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.crd{
     width: 300px;
     height: 210px;
-    margin-top: 4px;
     background: transparent;
     border-radius: 3px;
-    margin-right: 5px;
-    margin-left: 3px;
+    margin-left: 10px;
+    margin-top: 30px;
+
     display: flex;
     justify-content: center;
     align-items: center; 
     flex-direction: row;
-    padding: 1px;
+    background-color: #ffffff;
 }
 
-.card img {
+
+.crd img {
     width: 242px;
     height: 136.125px;
     display: flex;
@@ -85,7 +101,7 @@
     justify-content: center;
     border-radius: 4px;
 }
-.card p{
+.crd p{
     color: #333;
     font-weight: 500;
     font-size: .8rem;
@@ -97,11 +113,23 @@
 .with-css {
     width: 242px;
 }
+.with-css button{
+    width: 100%;
+    border: none;
+    height: 40px;
+    color: #f2f2f2;
+    background-color: #3189c4;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
+    margin-top: 10px;
+}
 
 .with-css p{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-align: center;
 }
 
 .container-card{
