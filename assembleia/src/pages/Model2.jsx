@@ -1,6 +1,6 @@
 import ReactPlayer from "react-player"
 
-export function Model(props) {
+export function Model2(props) {
 
     let modelStyle = {
         position: 'absolute',

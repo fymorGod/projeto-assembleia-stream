@@ -1,6 +1,5 @@
 //import api from '../api/app';
 import '../styles/login.css';
-import { useEffect } from 'react';
 import { useState } from 'react';
 import { api } from '../api/app';
 
@@ -8,13 +7,6 @@ export function Register() {
     const [username, setUser] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    //const [] = useState()
-    // useEffect(() => {
-    //     api.get('/admin/login').then((response) => {
-    //         console.log(response.data);
-    //     })
-    // }, [])
 
     function handleCreateUser() {
         api.post('/register/', {
