@@ -1,4 +1,4 @@
-from tokenize import Token
+
 from django.db import models
 
 
