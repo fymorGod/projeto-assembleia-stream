@@ -35,9 +35,6 @@ urlpatterns = [
     # Salva(POST) e Retorna(GET) os vídeos do Youtube selecionados
     re_path('select_videos_Youtube/', search_views.select_videos_Youtube),
 
-    # Retorna os vídeos do Youtube selecionados
-    re_path('search_get_videos_Yt/', search_views.get_videos_Youtube_selecionados),
-
     # VÍDEOS MP4 ----------------------------------------------------------------------
     # Lista dos Vídeos MP4
     re_path('videos_get/', user_videos_views.videos_list),    
