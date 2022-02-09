@@ -8,7 +8,7 @@ export function Organizar() {
 
     const navigate = useNavigate();
 
-    const [dados, setDados] = useState([]);
+    //const [dados, setDados] = useState([]);
     
     const lista = []
 
@@ -43,7 +43,7 @@ export function Organizar() {
     function handleInput(e, id) {
         e.preventDefault();
         if(e.target.value){
-            lista.push(id)
+            lista.push({'id': id})
             console.log(lista)
         }
     }
