@@ -39,7 +39,13 @@ export function Organizar() {
             setVideo(response.data);
         })
     }, [])
-
+    function handleInput(e, id) {
+        e.preventDefault();
+        if(e.target.value){
+            lista.push(id)
+            console.log(lista)
+        }
+    }
     return (
         <>
             <div className="container-admin-sistem">
@@ -63,7 +69,7 @@ export function Organizar() {
                                     <div className='card'>
                                         <img src={video.thumbnail} alt={video.title} />
                                         <p>{video.title}</p>
-                                        <input type="checkbox" value='sim' onChange={() => lista.push(video.id)}/>
+                                        <input type="checkbox" value='sim' onChange={e => handleInput(e, video.id)}/>
                                     </div>
                                 ))
                             }
