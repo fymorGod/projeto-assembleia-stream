@@ -8,7 +8,7 @@ export function Organizar() {
 
     const navigate = useNavigate();
 
-    //const [dados, setDados] = useState('');
+    const [dados, setDados] = useState([]);
     
     const lista = []
 
@@ -39,12 +39,16 @@ export function Organizar() {
             setVideo(response.data);
         })
     }, [])
+
     function handleInput(e, id) {
         e.preventDefault();
         if(e.target.value){
-            lista.push(id)
+            lista.push({id, dados})
             console.log(lista)
         }
+        api.get('/search').then(response => {
+            setDados(response.data);
+        })
     }
     return (
         <>
