@@ -11,6 +11,7 @@ from django.conf import settings
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from rest_framework import status
 from .serializers import Serializer
 
 videos_youtube = []
@@ -84,4 +85,8 @@ def index(request):
 def save_videos_Youtube(request):
     if request.method == 'POST':
         print(videos_youtube)
+    return Response(status=status.HTTP_201_CREATED)
+
+def get_videos_Youtube_selecionados(request):
+
     return Response(videos_youtube)
