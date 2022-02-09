@@ -13,6 +13,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .serializers import Serializer
 
+videos_youtube = []
+
 # Coleta os vídeos
 @api_view(['GET'])
 def index(request):
@@ -73,7 +75,13 @@ def index(request):
                 'link': f'https://www.youtube.com/watch?v={ result["id"] }'
             }
 
-            videos.append(video_data)    
+            videos_youtube.append(video_data)
+            videos.append(video_data)        
 
     return Response(videos)
-    # return render(request, 'search/index.html', context)
+
+@api_view(['POST'])
+def save_videos_Youtube(request):
+    if request.method == 'POST':
+        print(videos_youtube)
+    return Response(videos_youtube)
