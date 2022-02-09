@@ -13,7 +13,7 @@ export function Home() {
 
 
     useEffect(() => {
-        api.get('/search_get_videos_Yt/').then(response => {
+        api.get('/select_videos_Youtube/').then(response => {
             console.log(response.data[0].title);
             setVideo(response.data);
         })
@@ -87,7 +87,7 @@ export function Home() {
                     <h2>Sessões</h2>
                 </div>
                 {
-                    model2 === true ? <Model desc={tempData2[3]} hide={() => setModel2(false)} /> : ''
+                    model2 === true ? <Model2 desc={tempData2[3]} hide={() => setModel2(false)} /> : ''
                 }
                 <section className="section-one">
                     <div className="box-card">
