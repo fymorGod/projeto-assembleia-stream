@@ -7,10 +7,10 @@ A função index faz a conexão com a API do youtube
 import requests
 from isodate import parse_duration
 from django.conf import settings
-from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
+from .serializers import SearchSerializer
 
 videos_youtube = []
 
@@ -80,50 +80,56 @@ def index(request):
 
 @api_view(['GET','POST'])
 def select_videos_Youtube(request):
-
     # Cria a lista de vídeos
     videos = []
 
     if request.method == 'POST':
-        # Links de busca
-        video_url = 'https://www.googleapis.com/youtube/v3/videos'
 
-        # Parâmetros de busca dos vídeos com base na lista dos IDs
-        video_params = {
-            'key': settings.YOUTUBE_DATA_API_KEY,
-            'part':'snippet, contentDetails',
-            'id':','.join(request.data),
-            'maxResults': len(request.data)
-        }
+        serializer = SearchSerializer(data=request.data, many=True)
+        if serializer.is_valid():
+            print(serializer.data)
+            return Response(status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+        
 
-        # Faz a request com base na url de busca e usa os parâmetros de busca
-        r = requests.get(video_url, params=video_params)
+    # if request.method == 'POST':
+    #     # Links de busca
+    #     video_url = 'https://www.googleapis.com/youtube/v3/videos'
 
-        # Salva em um JSON os resultados
-        results = r.json()['items']
+    #     # Parâmetros de busca dos vídeos com base na lista dos IDs
+    #     video_params = {
+    #         'key': settings.YOUTUBE_DATA_API_KEY,
+    #         'part':'snippet, contentDetails',
+    #         'id':','.join(request.data),
+    #         'maxResults': len(request.data)
+    #     }
 
-        # Percorre os resultados dos vídeos, salva em um dict e depois em uma lista
-        for result in results:            
-            video_data = {
-                'title': result['snippet']['title'],
-                'description': result['snippet']['description'],
-                'id': result['id'],
-                'thumbnail': result['snippet']['thumbnails']['high']['url'],
-                'duration': parse_duration(result['contentDetails']['duration']).total_seconds(),            
-                'link': f'https://www.youtube.com/watch?v={ result["id"] }'
-            }
+    #     # Faz a request com base na url de busca e usa os parâmetros de busca
+    #     r = requests.get(video_url, params=video_params)
 
-            videos.append(video_data)
+    #     # Salva em um JSON os resultados
+    #     results = r.json()['items']
 
-        return Response(status=status.HTTP_201_CREATED)
+    #     # Percorre os resultados dos vídeos, salva em um dict e depois em uma lista
+    #     for result in results:            
+    #         video_data = {
+    #             'title': result['snippet']['title'],
+    #             'description': result['snippet']['description'],
+    #             'id': result['id'],
+    #             'thumbnail': result['snippet']['thumbnails']['high']['url'],
+    #             'duration': parse_duration(result['contentDetails']['duration']).total_seconds(),            
+    #             'link': f'https://www.youtube.com/watch?v={ result["id"] }'
+    #         }
+
+    #         videos.append(video_data)
+
+    #     print(videos)
+
+    #     return Response(status=status.HTTP_201_CREATED)
 
     if request.method == 'GET':
         if(not videos):
             return Response(status=status.HTTP_404_NOT_FOUND)
         else:
             return Response(videos, status=status.HTTP_200_OK)
-
-
-def get_videos_Youtube_selecionados(request):
-
-    return Response(videos_youtube)

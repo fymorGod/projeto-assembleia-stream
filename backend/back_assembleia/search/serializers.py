@@ -1,9 +1,7 @@
 from rest_framework import serializers
+from .models import Search
 
-class Serializer(serializers.Serializer):
-    title = serializers.CharField()
-    description = serializers.CharField(allow_blank=True)
-    id = serializers.CharField()
-    thumbnail = serializers.CharField()
-    duration = serializers.FloatField()
-    link = serializers.FloatField()
+class SearchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Search
+        fields = ('pk', 'id_video')

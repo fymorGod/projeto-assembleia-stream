@@ -17,10 +17,8 @@ def cronogramas_list(request):
 
 @api_view(['POST'])
 def create_cronograma(request):
-    print('entrou aqui')
     if request.method == 'POST':
         serializer = CronogramaSerializer(data=request.data)
-        print(request.data)
         if serializer.is_valid():
             serializer.save()
             print(serializer.data)
