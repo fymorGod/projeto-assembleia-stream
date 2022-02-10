@@ -40,9 +40,10 @@ export function Organizar() {
         })
     }, [])
 
-    function handleInput(id) {
-        lista.push({'id_video': id})
-        console.log(lista)
+    function handleInput(e, id) {
+        e.preventDefault();
+            lista.push({'id_video': id})
+            console.log(lista)
     }
     return (
         <>
@@ -67,7 +68,7 @@ export function Organizar() {
                                     <div className='card'>
                                         <img src={video.thumbnail} alt={video.title} />
                                         <p>{video.title}</p>
-                                        <input type="checkbox" value='sim' onChange={() => handleInput(video.id)}/>
+                                        <input type="checkbox" value='sim' onChange={e => handleInput(e, video.id)}/>
                                     </div>
                                 ))
                             }
