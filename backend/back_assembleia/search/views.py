@@ -82,7 +82,6 @@ def index(request):
 
 @api_view(['GET','POST','PUT'])
 def select_videos_Youtube(request):
-    print('entrou aqui')
     # try:
     #     id_videos = Search.objects.get(pk=pk)
     # except Search.DoesNotExist:
@@ -136,14 +135,18 @@ def select_videos_Youtube(request):
     # elif request.method == 'POST':
 
     #     serializer = SearchSerializer(data=request.data, many=True)
+    #     serializer.is_valid()
+    #     print(serializer.errors)
     #     if serializer.is_valid():
     #         print(serializer.data)
-    #         serializer.save()
+    #         # serializer.save()
     #         return Response(status=status.HTTP_201_CREATED)
     #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+
+
+
     elif request.method == 'POST':
-        print('POST')
         # Get vídeos do banco
         id_videos = Search.objects.all()
         serializer_id = SearchSerializer(id_videos, context={'request':request}, many=True)
@@ -156,38 +159,39 @@ def select_videos_Youtube(request):
         for item in request.data:
             ids_candidatos.append(item['id_video'])
 
-        
-        print('ids atuais: ')
-        print(ids_atuais)
-
-        print('ids candidatos: ')
-        print(ids_candidatos)
-
-
         # Verificar os candidatos que não estão no banco
         ids_novos = []
         achou = 0
         i = 0
         for item_candidato in ids_candidatos:
             for item_atual in ids_atuais:
-                print('item candidato: {} |||| item atual: {}'.format(item_candidato, item_atual))
                 if(item_candidato == item_atual):
                     achou = 1
-                    print('achou')
                     break
-            print('achou = ', achou)
             if(achou == 0):
                 ids_novos.append(item_candidato)
-                print('adicionado')
 
-        print(ids_novos)
+        ids_list = []
+        for item in ids_novos:
+            id_dict = {
+                'id_video': item
+            }
 
-        # serializer = SearchSerializer(data=ids_novos)
-        # if serializer.is_valid():
-        #     serializer.save()
-        #     print(serializer.data)
-        #     return Response(status=status.HTTP_201_CREATED)
-        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            ids_list.append(id_dict)
+
+        serializer = SearchSerializer(data=ids_list, many=True)
+
+        if serializer.is_valid():
+            serializer.save()
+            print(serializer.data)
+            return Response(status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+# [OrderedDict([('id_video', 'g7Jwu1dmpww')])]
+
+
 
 
     # if request.method == 'POST':
