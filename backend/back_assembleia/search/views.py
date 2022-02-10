@@ -4,6 +4,7 @@ A função index faz a conexão com a API do youtube
 2. Utiliza o ID dos vídeos coletados e coleta mais dados de cada vídeo
 '''
 # pip install requests, isodate
+from wsgiref.util import request_uri
 import requests
 from isodate import parse_duration
 from django.conf import settings
@@ -11,6 +12,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from .serializers import SearchSerializer
+from .models import Search
 
 videos_youtube = []
 
@@ -78,20 +80,119 @@ def index(request):
 
     return Response(videos)
 
-@api_view(['GET','POST'])
+@api_view(['GET','POST','PUT'])
 def select_videos_Youtube(request):
+    # try:
+    #     id_videos = Search.objects.get(pk=pk)
+    # except Search.DoesNotExist:
+    #     return Response(status=status.HTTP_404_NOT_FOUND)
+
     # Cria a lista de vídeos
     videos = []
 
-    if request.method == 'POST':
+    if request.method == 'GET':
 
-        serializer = SearchSerializer(data=request.data, many=True)
+        id_videos = Search.objects.all()
+        serializer = SearchSerializer(id_videos, context={'request':request}, many=True)
+        ids_list = []
+        for item in serializer.data:
+            ids_list.append(item['id_video'])
+
+        # Links de busca
+        video_url = 'https://www.googleapis.com/youtube/v3/videos'
+        
+        # Parâmetros de busca dos vídeos com base na lista dos IDs
+        video_params = {
+            'key': settings.YOUTUBE_DATA_API_KEY,
+            'part':'snippet, contentDetails',
+            'id':','.join(ids_list),
+            'maxResults': len(request.data)
+        }
+
+        # Faz a request com base na url de busca e usa os parâmetros de busca
+        r = requests.get(video_url, params=video_params)
+
+        # Salva em um JSON os resultados
+        results = r.json()['items']
+
+        # Percorre os resultados dos vídeos, salva em um dict e depois em uma lista
+        for result in results:            
+            video_data = {
+                'title': result['snippet']['title'],
+                'description': result['snippet']['description'],
+                'id': result['id'],
+                'thumbnail': result['snippet']['thumbnails']['high']['url'],
+                'duration': parse_duration(result['contentDetails']['duration']).total_seconds(),            
+                'link': f'https://www.youtube.com/watch?v={ result["id"] }'
+            }
+
+            videos.append(video_data)
+
+        print(videos)
+
+        return Response(videos, status=status.HTTP_200_OK)
+
+    # elif request.method == 'POST':
+
+    #     serializer = SearchSerializer(data=request.data, many=True)
+    #     serializer.is_valid()
+    #     print(serializer.errors)
+    #     if serializer.is_valid():
+    #         print(serializer.data)
+    #         # serializer.save()
+    #         return Response(status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+
+
+    elif request.method == 'POST':
+        # Get vídeos do banco
+        id_videos = Search.objects.all()
+        serializer_id = SearchSerializer(id_videos, context={'request':request}, many=True)
+        ids_atuais = []
+        for item in serializer_id.data:
+            ids_atuais.append(item['id_video'])
+
+        # Itens candidatos
+        ids_candidatos = []
+        for item in request.data:
+            ids_candidatos.append(item['id_video'])
+
+        # Verificar os candidatos que não estão no banco
+        ids_novos = []
+        achou = 0
+        i = 0
+        for item_candidato in ids_candidatos:
+            for item_atual in ids_atuais:
+                if(item_candidato == item_atual):
+                    achou = 1
+                    break
+            if(achou == 0):
+                ids_novos.append(item_candidato)
+
+        ids_list = []
+        for item in ids_novos:
+            id_dict = {
+                'id_video': item
+            }
+
+            ids_list.append(id_dict)
+
+        serializer = SearchSerializer(data=ids_list, many=True)
+
         if serializer.is_valid():
+            serializer.save()
             print(serializer.data)
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        
-        
+
+
+
+# [OrderedDict([('id_video', 'g7Jwu1dmpww')])]
+
+
+
 
     # if request.method == 'POST':
     #     # Links de busca
@@ -127,9 +228,3 @@ def select_videos_Youtube(request):
     #     print(videos)
 
     #     return Response(status=status.HTTP_201_CREATED)
-
-    if request.method == 'GET':
-        if(not videos):
-            return Response(status=status.HTTP_404_NOT_FOUND)
-        else:
-            return Response(videos, status=status.HTTP_200_OK)
