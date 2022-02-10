@@ -5,7 +5,7 @@ import '../styles/admin.css';
 
 export function Organizar() {
     const [videos, setVideo] = useState([])
-
+    const [input, setInput] = useState(false)
     const navigate = useNavigate();
 
     //const [dados, setDados] = useState([]);
@@ -41,10 +41,11 @@ export function Organizar() {
     }, [])
 
     function handleInput(e, id) {
-        e.preventDefault();
-        if(e.target.value){
-            lista.push({'id_video': id})
-            console.log(lista)
+        if (e.target.checked === true){
+            lista.push(id)
+        }
+        else {
+            lista.pop(id)
         }
     }
     return (
@@ -70,7 +71,7 @@ export function Organizar() {
                                     <div className='card'>
                                         <img src={video.thumbnail} alt={video.title} />
                                         <p>{video.title}</p>
-                                        <input type="checkbox" value='sim' onChange={e => console.log(e.target.checked)}/>
+                                        <input type="checkbox" value='sim' onChange={handleInput}/>
                                     </div>
                                 ))
                             }
