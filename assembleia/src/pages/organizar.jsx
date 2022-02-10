@@ -42,10 +42,8 @@ export function Organizar() {
 
     function handleInput(e, id) {
         e.preventDefault();
-        if(e.target.value){
             lista.push({'id_video': id})
             console.log(lista)
-        }
     }
     return (
         <>
