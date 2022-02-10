@@ -41,22 +41,12 @@ export function Organizar() {
     }, [])
 
     function handleInput(e, id) {
-        if (yes.checked == true && no.checked == true){
-            console.log("error")
-        }
-
-        else if (yes.checked == true){
-            lista.push(id)
-        }
-        else if (no.checked == true){
-            lista.pop(id)
+        e.preventDefault();
+        if(e.target.value){
+            lista.push({'id_video': id})
+            console.log(lista)
         }
     }
-
-    let yes = document.getElementById("check1");
-    let no = document.getElementById("check2");
-
-
     return (
         <>
             <div className="container-admin-sistem">
@@ -80,8 +70,7 @@ export function Organizar() {
                                     <div className='card'>
                                         <img src={video.thumbnail} alt={video.title} />
                                         <p>{video.title}</p>
-                                        <input type="checkbox" id='check1' value='sim' onChange={e => handleInput(video.id)}/>
-                                        <input type="checkbox" id='check2' value='nao'  onChange={e => handleInput(video.id)}/>
+                                        <input type="checkbox" value='sim' onChange={e => console.log(e.target.checked)}/>
                                     </div>
                                 ))
                             }
