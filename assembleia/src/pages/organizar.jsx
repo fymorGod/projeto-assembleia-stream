@@ -40,8 +40,7 @@ export function Organizar() {
         })
     }, [])
 
-    function handleInput(e, id) {
-        e.preventDefault();
+    function handleInput(id) {
         lista.push({'id_video': id})
         console.log(lista)
     }
