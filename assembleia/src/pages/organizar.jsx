@@ -68,7 +68,7 @@ export function Organizar() {
                                     <div className='card'>
                                         <img src={video.thumbnail} alt={video.title} />
                                         <p>{video.title}</p>
-                                        <input type="checkbox" value='sim' onChange={e => handleInput(e, video.id)}/>
+                                        <input type="checkbox" value='sim' onChange={() => e => handleInput(e, video.id)}/>
                                     </div>
                                 ))
                             }
