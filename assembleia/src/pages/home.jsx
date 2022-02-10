@@ -6,6 +6,8 @@ import { PlayerVideo } from "../components/PlayerVideo/PlayerVideo";
 import { Model } from "./Model";
 import { Model2 } from "./Model2";
 
+import playButtonIcon from '../assets/play-button3.png'
+
 import '../styles/home.css';
 
 export function Home() {
@@ -13,7 +15,7 @@ export function Home() {
 
 
     useEffect(() => {
-        api.get('/select_videos_Youtube/').then(response => {
+        api.get('/search/').then(response => {
             console.log(response.data[0].title);
             setVideo(response.data);
         })
@@ -67,11 +69,13 @@ export function Home() {
                         {
                             videos.map((item) => (
                                 <div className="crd" key={item.id} >
-                                    <div className="">
-                                        <img src={item.thumbnail} />
+                                    <div>
+                                        <div className="img-thumb">
+                                            <img src={item.thumbnail} />
+                                        </div> 
                                         <div className="with-css">
                                             <p>{item.title}</p>
-                                            <button onClick={() => getData(item.thumbnail, item.title, item.link)}>Ver mais</button>
+                                            <button onClick={() => getData(item.thumbnail, item.title, item.link)}> <img src={playButtonIcon}/> </button>
                                         </div>
                                     </div>
                                 </div>
