@@ -24,7 +24,7 @@ def searchVideos(request):
         ids_list = []
         for item in serializer.data:
             ids_list.append(item['id_video'])
-
+        
         # Links de busca
         video_url = 'https://www.googleapis.com/youtube/v3/videos'
         
@@ -64,5 +64,4 @@ def searchVideos(request):
         return Response(status=status.HTTP_404_NOT_FOUND)
     else:
         print('\n\n')
-        print(resultados_return)
         return Response(resultados_return, status=status.HTTP_200_OK) 
