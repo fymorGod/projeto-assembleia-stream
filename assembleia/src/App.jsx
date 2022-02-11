@@ -5,7 +5,7 @@ import { Admin } from "./pages/admin";
 import { Register } from "./pages/register";
 import { Organizar } from "./pages/organizar";
 import { AdmStreams } from "./pages/admStreams";
-import { AuthProvider } from "./Context/AuthContext";
+//import { AuthProvider } from "./Context/AuthContext";
 function App() {
   return (
     //<AuthProvider>
