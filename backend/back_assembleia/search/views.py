@@ -128,6 +128,7 @@ def select_videos_Youtube(request):
 
             videos.append(video_data)
 
+<<<<<<< HEAD
         print(videos)
 
         return Response(videos, status=status.HTTP_200_OK)
@@ -146,6 +147,11 @@ def select_videos_Youtube(request):
 
 
 
+=======
+        return Response(videos, status=status.HTTP_200_OK)
+
+    
+>>>>>>> 8318d6ca544a87f1fcac62e137efdd32898ce39f
     elif request.method == 'POST':
         # Get vídeos do banco
         id_videos = Search.objects.all()
@@ -183,6 +189,7 @@ def select_videos_Youtube(request):
 
         if serializer.is_valid():
             serializer.save()
+<<<<<<< HEAD
             print(serializer.data)
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -228,3 +235,7 @@ def select_videos_Youtube(request):
     #     print(videos)
 
     #     return Response(status=status.HTTP_201_CREATED)
+=======
+            return Response(status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+>>>>>>> 8318d6ca544a87f1fcac62e137efdd32898ce39f
