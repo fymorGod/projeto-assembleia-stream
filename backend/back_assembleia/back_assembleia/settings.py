@@ -144,3 +144,8 @@ YOUTUBE_DATA_API_KEY = 'AIzaSyA40kS7f6QjKmGH14CNW6_42sIhKG7m-rg'
 
 # Assembleia project 1
 # YOUTUBE_DATA_API_KEY = 'AIzaSyCMqg3HztGD5QZGmtNV6eRt0WZ7rq7FxYs'
+
+REST_FRAMEWORK = {
+
+    'DATETIME_FORMAT': "%m/%d/%Y %H:%M:%S",
+}
