@@ -49,11 +49,16 @@
     flex-direction: column;
     margin-bottom: 10px;
 }
-.container-forms > p{
+.container-forms p{
     padding: 5px;
-    border-radius: 3px;
-    border: 1px solid rgb(87, 85, 85);
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
+}
+.container-forms p:after{
+    content: '';
+    width: 50px;
+    display: block;
+    height: 2px;
+    background-color: rgb(33, 131, 41);
+    margin: 0 auto;
 }
 .container-forms p a {
     color: #333;
