@@ -19,8 +19,6 @@ export function Login() {
     //     }) 
     // }, [])
     
-  
-
     function handleLogin() {
         api.post('/login/', {
             username: username,
