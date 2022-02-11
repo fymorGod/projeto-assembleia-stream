@@ -82,11 +82,6 @@ def index(request):
 
 @api_view(['GET','POST','PUT'])
 def select_videos_Youtube(request):
-    # try:
-    #     id_videos = Search.objects.get(pk=pk)
-    # except Search.DoesNotExist:
-    #     return Response(status=status.HTTP_404_NOT_FOUND)
-
     # Cria a lista de vídeos
     videos = []
 
@@ -128,36 +123,9 @@ def select_videos_Youtube(request):
 
             videos.append(video_data)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        print(videos)
-
-        return Response(videos, status=status.HTTP_200_OK)
-
-    # elif request.method == 'POST':
-
-    #     serializer = SearchSerializer(data=request.data, many=True)
-    #     serializer.is_valid()
-    #     print(serializer.errors)
-    #     if serializer.is_valid():
-    #         print(serializer.data)
-    #         # serializer.save()
-    #         return Response(status=status.HTTP_201_CREATED)
-    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-
-
-
-=======
         return Response(videos, status=status.HTTP_200_OK)
 
     
->>>>>>> 8318d6ca544a87f1fcac62e137efdd32898ce39f
-=======
-        return Response(videos, status=status.HTTP_200_OK)
-
-    
->>>>>>> 8318d6ca544a87f1fcac62e137efdd32898ce39f
     elif request.method == 'POST':
         # Get vídeos do banco
         id_videos = Search.objects.all()
@@ -195,58 +163,6 @@ def select_videos_Youtube(request):
 
         if serializer.is_valid():
             serializer.save()
-<<<<<<< HEAD
-<<<<<<< HEAD
             print(serializer.data)
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-
-# [OrderedDict([('id_video', 'g7Jwu1dmpww')])]
-
-
-
-
-    # if request.method == 'POST':
-    #     # Links de busca
-    #     video_url = 'https://www.googleapis.com/youtube/v3/videos'
-
-    #     # Parâmetros de busca dos vídeos com base na lista dos IDs
-    #     video_params = {
-    #         'key': settings.YOUTUBE_DATA_API_KEY,
-    #         'part':'snippet, contentDetails',
-    #         'id':','.join(request.data),
-    #         'maxResults': len(request.data)
-    #     }
-
-    #     # Faz a request com base na url de busca e usa os parâmetros de busca
-    #     r = requests.get(video_url, params=video_params)
-
-    #     # Salva em um JSON os resultados
-    #     results = r.json()['items']
-
-    #     # Percorre os resultados dos vídeos, salva em um dict e depois em uma lista
-    #     for result in results:            
-    #         video_data = {
-    #             'title': result['snippet']['title'],
-    #             'description': result['snippet']['description'],
-    #             'id': result['id'],
-    #             'thumbnail': result['snippet']['thumbnails']['high']['url'],
-    #             'duration': parse_duration(result['contentDetails']['duration']).total_seconds(),            
-    #             'link': f'https://www.youtube.com/watch?v={ result["id"] }'
-    #         }
-
-    #         videos.append(video_data)
-
-    #     print(videos)
-
-    #     return Response(status=status.HTTP_201_CREATED)
-=======
-            return Response(status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
->>>>>>> 8318d6ca544a87f1fcac62e137efdd32898ce39f
-=======
-            return Response(status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
->>>>>>> 8318d6ca544a87f1fcac62e137efdd32898ce39f
