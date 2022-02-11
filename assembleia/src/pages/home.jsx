@@ -15,7 +15,7 @@ export function Home() {
 
 
     useEffect(() => {
-        api.get('/search/').then(response => {
+        api.get('/select_videos_Youtube/').then(response => {
             console.log(response.data[0].title);
             setVideo(response.data);
         })
