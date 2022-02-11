@@ -1,20 +1,25 @@
 //import api from '../api/app';
 import '../styles/login.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { api } from '../api/app';
 import { useNavigate } from 'react-router';
+
+//import { Context } from '../Context/AuthContext';
+
 export function Login() {
     const [username, setUser] = useState('');
     const [password, setPassword] = useState('');
-
+    const navigate = useNavigate();
+    
+    //const {authenticate, handleLogin} = useContext(Context)
     //const [] = useState()
     // useEffect(() => {
     //     api.get('/admin/login').then((response) => {
     //         console.log(response.data);
-    //     })
+    //     }) 
     // }, [])
     
-    const navigate = useNavigate();
+  
 
     function handleLogin() {
         api.post('/login/', {
@@ -22,7 +27,7 @@ export function Login() {
             password: password
         }).then(response => {
            if (response.data){
-               navigate('/admin/system')
+               
            }
         })
     }
