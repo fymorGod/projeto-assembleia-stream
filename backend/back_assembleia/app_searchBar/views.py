@@ -57,8 +57,6 @@ def searchVideos(request):
 
     resultados_return = []
     for video in videos:
-        print(video)
-        print('\n\n')
         if ((request.data['search']).lower() in (video['title']).lower()):
             resultados_return.append(video)
 
@@ -66,5 +64,4 @@ def searchVideos(request):
         return Response(status=status.HTTP_404_NOT_FOUND)
     else:
         print('\n\n')
-        print(resultados_return)
         return Response(resultados_return, status=status.HTTP_200_OK) 
