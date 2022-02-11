@@ -52,7 +52,7 @@
 .container-forms p{
     padding: 5px;
 }
-.container-forms p:after{
+.container-forms p a:after{
     content: '';
     width: 50px;
     display: block;
