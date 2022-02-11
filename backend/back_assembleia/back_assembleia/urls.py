@@ -43,7 +43,7 @@ urlpatterns = [
     re_path('videos_post/', user_videos_views.save_video),
 
     # Deleta o Vídeo MP4
-    re_path('video_delete/(?P<pk>\d+)$', user_videos_views.delete_video),
+    re_path(r'video_delete/(?P<pk>\d+)$', user_videos_views.delete_video),
 
     # Retorna um Vídeo MP4 pela pk
     re_path(r'video_detail/(?P<pk>\d+)$', user_videos_views.video_detail),
