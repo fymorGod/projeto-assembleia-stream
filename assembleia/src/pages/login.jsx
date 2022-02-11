@@ -10,7 +10,7 @@ export function Login() {
     const [username, setUser] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    
+
     //const {authenticate, handleLogin} = useContext(Context)
     //const [] = useState()
     // useEffect(() => {
@@ -27,7 +27,7 @@ export function Login() {
             password: password
         }).then(response => {
            if (response.data){
-               
+               navigate('/admin/system')
            }
         })
     }

@@ -51,7 +51,7 @@ export function Admin() {
                     <div className="box-menu">
                         <div className="box-login">
                             <h2 id='admin-user'>Admin User</h2>
-                            <p>Logout</p>
+                            <p><a href="/admin/login"> Logout</a></p>
                         </div>
                         <div className="box-buttons">
                             <button onClick={handleInsert}>Inserir vídeos</button>

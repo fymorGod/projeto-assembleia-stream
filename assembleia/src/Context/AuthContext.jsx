@@ -17,7 +17,7 @@ function AuthProvider ({children}) {
         setLoading(false)
     },[])
 
-    async function handleLogin (){
+    async function handleLogin ({username, password}){
         const { data: { token } } = await api.post('');
         localStorage.setItem('token', JSON.stringify(token))
 
