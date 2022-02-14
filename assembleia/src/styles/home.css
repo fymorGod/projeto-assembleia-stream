@@ -22,7 +22,9 @@
     margin-top: 20px;
     width: 100%;
     padding: 10px 20px;
-    border-radius: 4px;
+    border: 1px solid #c24f1a;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     background-color: #c24f1a;
 }
 .container-destaque h2{
@@ -50,7 +52,9 @@
     width: 100%;
     background-color: #004C7D;
     padding: 10px 20px;
-    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    
 }
 .container-sessoes h2{
     text-align: center;
@@ -68,33 +72,33 @@
     background-color: #333;
 } */
 .section-one{
-    padding: 20px 10px;
-    background-color: #fff;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
+
+    background-color: #f2f2f2;
+    
 }
 .box-card{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center ;
     flex-wrap: wrap;
 }
 
 .crd{
-    width: 300px;
+    width: 350px;
     height: 210px;
-    border-radius: 3px;
-    margin-left: 10px;
-    margin-top: 20px;
-
+    background-color: #f2f2f2;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-left: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center; 
     flex-direction: row;
 }
 
 .crd img {
-    width: 242px;
-    height: 136.125px;
+    width: 350PX;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,7 +140,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    text-align: center;
+    text-align: left;
 }
 
 .container-card{

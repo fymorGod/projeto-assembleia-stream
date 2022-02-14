@@ -27,7 +27,7 @@ export function Login() {
             password: password
         }).then(response => {
            if (response.data){
-               
+               navigate('/admin/system')
            }
         })
     }
