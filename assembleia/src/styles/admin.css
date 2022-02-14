@@ -51,8 +51,18 @@
 }
 .container-forms p{
     padding: 5px;
-    border-radius: 3px;
-    border: 1px solid rgb(87, 85, 85);
+}
+.container-forms p a:after{
+    content: '';
+    width: 50px;
+    display: block;
+    height: 2px;
+    background-color: rgb(33, 131, 41);
+    margin: 0 auto;
+}
+.container-forms p a {
+    color: #333;
+    text-decoration: none;
 }
 .box-menu button{
     width: 260px;
