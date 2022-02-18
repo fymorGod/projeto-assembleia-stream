@@ -44,10 +44,12 @@ export function Organizar() {
         lista.push({'id_video': id})
         console.log(lista)
     }
+    
     function handleInput2(id) {
         lista.pop({'id_video': id})
         console.log(lista)
     }
+
     return (
         <>
             <div className="container-admin-sistem">
