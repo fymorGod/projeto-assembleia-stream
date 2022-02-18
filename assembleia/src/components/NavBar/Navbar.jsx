@@ -2,6 +2,7 @@ import {useState } from 'react';
 import { api } from '../../api/app';
 import logo from '../../assets/logo-assembleia.png';
 import './navbar.css';
+import lupa from '../../assets/pesquisa.png';
 
 export function Navbar() {
     const [search, setSearch] = useState('')
@@ -22,9 +23,9 @@ export function Navbar() {
                     <p>Assembleia Legislativa do <br /> Estado do Maranhão</p>
                 </div>
             </div>
-            <div>
+            <div className='search-buttons'>
                 <input type="search" name="" id="" placeholder='Pesquisar' onChange={e => setSearch(e.target.value)}/>
-                <button onClick={handleSearch} className='btn-send-search'>Enviar</button>
+                <button onClick={handleSearch} className='btn-send-search'><img className='lupa' src={lupa} alt="icone de lupa" /></button>
             </div>
         </div>
     )

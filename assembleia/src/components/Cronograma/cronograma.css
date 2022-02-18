@@ -1,6 +1,5 @@
 .cronograma-content{
-    width: 30%;
-    margin-left: 10px;
+    margin-left: 35px!important;
     background: #fff;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
     border-radius: 12px;
@@ -8,10 +7,14 @@
 }
 .title-cronograma{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
 }
-
+.title-cronograma img {
+    width: 20px;
+    height: 20px;
+}
 .title-cronograma h2{
     margin-right: 35px;
     font-size: 1em;
